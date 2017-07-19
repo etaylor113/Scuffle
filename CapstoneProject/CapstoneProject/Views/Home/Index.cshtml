@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Scuffle</h1>
+    <p class="lead">Create workouts, find fitness events, and challenge friends! </p>
+    @*<p><a class="btn btn-primary btn-lg" style="background-color: #4717F6; border-color: black; color: #E7DFDD" href='@Url.Action("MyAction", "MyController")'>Learn more &raquo;</a></p>*@
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Workout Plans</h2>
+        <p>
+           Create a personal fitness plan to follow your progress through the week.
+        </p>
+        <p><a class="btn btn-default" style="background-color: #4717F6; border-color: black; color: #E7DFDD" href='@Url.Action("WorkoutPlanHome", "WorkoutPlan")'>Workout Plan &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Challenges</h2>
+        <p>
+            Create challenges with or against your friends. First One to complete all set goals within the time period wins!
+        </p>
+        <p><a class="btn btn-default" style="background-color: #4717F6; border-color: black; color: #E7DFDD" href='@Url.Action("ChallengesHome", "Challenges")'>Challenges &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Find fitness events</h2>
+        <p>
+            Learn about event in your area. Get active and bring your friends too!
+        </p>
+        <p><a class="btn btn-default" style="background-color: #4717F6; border-color: black; color: #E7DFDD" href='@Url.Action("ViewEvents", "Events")'>Find Events &raquo;</a></p>
+    </div>
+</div>

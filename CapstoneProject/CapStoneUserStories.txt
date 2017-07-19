@@ -1,0 +1,61 @@
+Active Access Key: e7d3anxx2a923ryrdm6zcx68
+
+Google Sign in Key:
+
+Google Map Key: AIzaSyCwr4my9cokU5JiXc41ODW41OOjBpHeMMg
+
+Gmail Key:
+
+
+
+Fitness Challenge Web App
+
+
+
+My goal is to build a creative way to motivate friends 
+and family to be more 
+active. It's a fun way to push past 
+personal fitness obstacles that one may
+not be able to 
+overcome due to a lack of drive or motivation.  
+
+User Stories:
+
+1. As an unregistered user, I want to be able to register for an account, and also sign in to my account.
+
+2. As an unregistered OR registered user, I want to be able to see local fitness events such as mud runs, marathons, and beer runs on a google map. 
+
+3. As a registered user, I want to be able to add other registered users to my friends list.
+
+4. As a registered user, I want to be able to use the Web App's challenge builder to create custom fitness challenges with 
+   specific workout goals and difficulty levels to compete with my friends in the gym or at home.
+
+5. As a registered user, I want to be able to add friends to my challenges and click on Individual goals to see who has completed them.
+
+6. As a registered user, I want to be able to schedule fitness events into my personal google calendar.
+
+7. As a registered user, I want to be able to create a personal workout chart that I can use to plan my workouts day to day.
+
+8. As a registered user, I want to be able to make my workout chart shared or private with my friends.
+
+9. As a registered user, I want to be able to see shared friends' workout charts.
+
+10. *BONUS* As a registered user, I want to be able to recieve milestone rewards for completing goals before my friends.
+
+11. *BONUS* As a registered user, I want to be able to recieve rewards for completing challenges that me or my friends have set. 
+
+12. *BONUS* As a registered user, I want to be able to view rewards I have earned in the past. 
+
+13. *BONUS* As a developer, I want to be able to create my own rewards in the form of a Jpeg or other easy to input form. 
+
+
+
+
+
+
+
+
+
+
+
+
