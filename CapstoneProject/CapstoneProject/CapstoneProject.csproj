@@ -292,6 +292,7 @@
     <Content Include="Views\Challenges\ChallengesHome.cshtml" />
     <Content Include="Views\ErrorMessages\FriendNotFound.cshtml" />
     <Content Include="Views\ErrorMessages\PageNotFound.cshtml" />
+    <Content Include="Views\ErrorMessages\ErrorOccurred.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
