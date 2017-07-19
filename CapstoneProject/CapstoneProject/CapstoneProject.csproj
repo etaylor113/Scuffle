@@ -284,13 +284,14 @@
     <Content Include="Views\Friends\ViewFriendList.cshtml" />
     <Content Include="Views\Friends\SearchForFriends.cshtml" />
     <Content Include="Views\Friends\FriendAdded.cshtml" />
-    <Content Include="Views\Friends\FriendNotFound.cshtml" />
     <Content Include="Views\WorkoutPlan\CreateWorkoutChart.cshtml" />
     <Content Include="Views\WorkoutPlan\ViewWorkoutChart.cshtml" />
     <Content Include="Views\Challenges\CreateChallenge.cshtml" />
     <Content Include="Views\Challenges\ViewChallenge.cshtml" />
     <Content Include="Views\WorkoutPlan\WorkoutPlanHome.cshtml" />
     <Content Include="Views\Challenges\ChallengesHome.cshtml" />
+    <Content Include="Views\ErrorMessages\FriendNotFound.cshtml" />
+    <Content Include="Views\ErrorMessages\PageNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
