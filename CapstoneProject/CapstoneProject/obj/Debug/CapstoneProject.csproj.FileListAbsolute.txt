@@ -168,3 +168,9 @@ C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\obj\Debug\Capston
 C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\obj\Debug\CapstoneProject.csproj.GenerateResource.Cache
 C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\obj\Debug\CapstoneProject.dll
 C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\obj\Debug\CapstoneProject.pdb
+C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\bin\System.Net.Http.Formatting.dll
+C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\bin\System.Web.Http.dll
+C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\bin\System.Web.Http.WebHost.dll
+C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\bin\System.Net.Http.Formatting.xml
+C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\bin\System.Web.Http.xml
+C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\bin\System.Web.Http.WebHost.xml

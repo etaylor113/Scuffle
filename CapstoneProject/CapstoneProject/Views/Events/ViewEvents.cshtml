@@ -24,6 +24,46 @@
     }
 
 
+
+
+
+    @*function search() {
+        var url = 'http://api.amp.active.com/v2/search?query=running&category=event&start_date=2013-07-04..&near=San%20Diego,CA,US&radius=50&api_key=e7d3anxx2a923ryrdm6zcx68';
+        var data = @Html.Raw(Json.Encode("http://api.amp.active.com/v2/search?query=running&category=event&start_date=2013-07-04..&near=San%20Diego,CA,US&radius=50&api_key=e7d3anxx2a923ryrdm6zcx68"));
+        console.log(data); 
+        }
+
+        function getData() {
+            var items;
+            $.getJSON("http://api.eventful.com/rest/events/search?...&keywords=books&location=San+Diego&date=Future&app_key=%20f82xVFHpZXDFfbck", function(data) {
+                items = data;
+                items.forEach(function(item) {
+                    console.log(item);
+                });
+            });
+            console.log(items)
+        }
+
+        
+        function ajax(){
+            $.ajax({
+                type: "GET",
+                dataType: 'jsonp',
+                url: 'http://api.amp.active.com/v2/search?query=running&category=event&start_date=2013-07-04..&near=San%20Diego,CA,US&radius=50&api_key=e7d3anxx2a923ryrdm6zcx68',              
+                crossDomain : true,
+            })
+    .done(function( data ) {
+        console.log("done");
+    })
+    .fail( function(xhr, textStatus, errorThrown) {
+        alert(xhr.responseText);
+        alert(textStatus);
+    });
+        }
+
+        ajax();*@
+
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwr4my9cokU5JiXc41ODW41OOjBpHeMMg&callback=myMap"></script>
