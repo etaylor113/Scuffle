@@ -12,7 +12,7 @@ namespace CapstoneProject.Models
         {
             public string topic { get; set; }
             public string state { get; set; }
-            public string date { get; set; }
+            //public string date { get; set; }
         }
            
        
@@ -168,29 +168,7 @@ namespace CapstoneProject.Models
             public string dmaName { get; set; }
         }
 
-        public class Place
-        {
-            public string placeDsc { get; set; }
-            public string placeUrlAdr { get; set; }
-            public string timezone { get; set; }
-            public string postalCode { get; set; }
-            public string latitude { get; set; }
-            public string directionsTxt { get; set; }
-            public string addressLine2Txt { get; set; }
-            public GeoPoint geoPoint { get; set; }
-            public string addressLine1Txt { get; set; }
-            public string stateProvinceCode { get; set; }
-            public string localityName { get; set; }
-            public string cityName { get; set; }
-            public int? timezoneOffset { get; set; }
-            public int? timezoneDST { get; set; }
-            public string countryCode { get; set; }
-            public Dma dma { get; set; }
-            public string countryName { get; set; }
-            public string placeGuid { get; set; }
-            public string placeName { get; set; }
-            public string longitude { get; set; }
-        }
+       
 
         public class Category
         {
@@ -262,6 +240,17 @@ namespace CapstoneProject.Models
 
         public class SponsoredContent
         {
+        }
+
+        public class Place
+        {          
+            public string postalCode { get; set; }
+            public string latitude { get; set; }         
+            public string addressLine2Txt { get; set; }           
+            public string addressLine1Txt { get; set; }
+            public string stateProvinceCode { get; set; }      
+            public string cityName { get; set; }                                      
+            public string longitude { get; set; }
         }
 
         public class Result
@@ -350,6 +339,24 @@ namespace CapstoneProject.Models
             public SponsoredContent sponsoredContent { get; set; }
         }
 
+
+        public class EventsModel
+        {
+            public string assetName { get; set; }
+            public string addressLine1Txt { get; set; }
+            public string activityStartDate { get; set; }
+            public string registrationUrlAdr { get; set; }
+            public string salesEndDate { get; set; }
+            //public List<Place> place { get; set; }
+           
+        }
+
+        public class EventsRootModel
+        {
+            public List<EventsModel> results { get; set; }
+        }
+     
+
         public class RootObject
         {
             public int retries { get; set; }
@@ -366,9 +373,6 @@ namespace CapstoneProject.Models
         }
 
 
-        public class RootObjectModel
-        {
-            public List<RootObject> rootObj { get; set; }
-        }
+       
     }
 }   

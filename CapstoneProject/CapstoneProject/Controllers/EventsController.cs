@@ -20,9 +20,9 @@ namespace CapstoneProject.Controllers
             return View();
         }
 
-        public ActionResult ViewEvents(EventModel.SearchParams paramsModel, EventModel.RootObject rootObjModel)
+        public ActionResult ViewEvents(EventModel.SearchParams paramsModel)
         {
-            List<EventModel.Result> userInput = new List<EventModel.Result>();
+            List<EventModel.EventsModel> allEvents = new List<EventModel.EventsModel>();
 
             using (var client = new HttpClient())
             {
@@ -34,28 +34,21 @@ namespace CapstoneProject.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     var result = response.Content.ReadAsStringAsync();
-                    EventModel.RootObject listEvents = JsonConvert.DeserializeObject<EventModel.RootObject>(result.Result);
-                    foreach (EventModel.Result item in listEvents.results)
+                    EventModel.EventsRootModel eventList = JsonConvert.DeserializeObject<EventModel.EventsRootModel>(result.Result);
+                    foreach (EventModel.EventsModel item in eventList.results)
                     {
-                        EventModel.Result events = new EventModel.Result();
-                        events.assetName = item.assetName;
-                        events.place.stateProvinceCode = item.place.stateProvinceCode;
-                        events.place.addressLine1Txt = item.place.addressLine1Txt;
+                        EventModel.EventsModel events = new EventModel.EventsModel();
+                        events.assetName = item.assetName;                        
                         events.activityStartDate = item.activityStartDate;
                         events.salesEndDate = item.salesEndDate;
                         events.registrationUrlAdr = item.registrationUrlAdr;
-                        events.place.latitude = item.place.latitude;
-                        events.place.longitude = item.place.longitude;
-
-                                           
-                        userInput.Add(item);
+                        //events.place = item.place;
+                                                
+                        allEvents.Add(events);
                     }
                 }
             }
-            return View(userInput);
+            return View(allEvents);
         }
-
-
-
     }
 }

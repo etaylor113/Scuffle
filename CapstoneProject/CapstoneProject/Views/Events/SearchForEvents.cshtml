@@ -5,37 +5,68 @@
 
 <h2>Search For Events</h2>
 <br />
-@using (Html.BeginForm("SearchForEvents", "Events", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("ViewEvents", "Events"))
 {
-    <p>Please type today's date in the form of (YYYY-MM-DD)</p>
+    @*<p>Please type today's date in the form of (YYYY-MM-DD)</p>
     <div class="form-group">
         @Html.LabelFor(m => m.date, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.date, new { @class = "form-control" })
         </div>
-    </div>
+    </div>*@
 
         <div class="form-group">
             @Html.LabelFor(m => m.state, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.state, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.state, new { @class = "form-control", id = "searchInput" })
                 </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(m => m.topic, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.topic, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.topic, new { @class = "form-control", id = "searchInput"})
             </div>
         </div>
 
         <br />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" class="btn btn-default" value="SearchForEvents" onclick="window.location.href='@Url.Action("ViewEvents", "Events")';"/>
+                <input type="submit" class="btn btn-default" value="Search" />
             </div>
         </div>  
 }
+
+<script>
+   function post() {
+        var Search = $("#searchInput").val();
+        $.ajax({
+            type: "GET",
+            url: "ViewEvents",
+            coontentType: "application/json",
+            data: {
+                "Search": Search
+            },
+            dataType: "json",
+
+            success: function (data) {
+                console.log(data)
+            },
+            error: function (req, status, error) {
+                console.log(req);
+            }
+        });
+        return false;
+   };
+
+</script>
+
+
+
+
+
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
