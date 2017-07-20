@@ -1,4 +1,4 @@
-﻿@model CapstoneProject.Models.EventModel
+﻿@model CapstoneProject.Models.EventModel.SearchParams
 @{
     ViewBag.Title = "SearchForEvents";
 }
@@ -7,7 +7,14 @@
 <br />
 @using (Html.BeginForm("SearchForEvents", "Events", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <p>Please type today's date in the form of (YYYY-MM-DD)</p>
+    <div class="form-group">
+        @Html.LabelFor(m => m.date, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.date, new { @class = "form-control" })
+        </div>
+    </div>
+
         <div class="form-group">
             @Html.LabelFor(m => m.state, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
@@ -25,7 +32,7 @@
         <br />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" class="btn btn-default" value="SearchForEvents" />
+                <input type="submit" class="btn btn-default" value="SearchForEvents" onclick="window.location.href='@Url.Action("ViewEvents", "Events")';"/>
             </div>
         </div>  
 }

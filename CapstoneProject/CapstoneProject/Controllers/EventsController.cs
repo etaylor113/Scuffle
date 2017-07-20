@@ -14,56 +14,48 @@ namespace CapstoneProject.Controllers
     public class EventsController : Controller
     {
 
-        
 
-
-        public ActionResult SearchForEvents(EventModel model)
+        public ActionResult SearchForEvents()
         {
-            List<SearchParams> userInput = new List<SearchParams>();
+            return View();
+        }
+
+        public ActionResult ViewEvents(EventModel.SearchParams paramsModel, EventModel.RootObject rootObjModel)
+        {
+            List<EventModel.Result> userInput = new List<EventModel.Result>();
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://api.seatgeek.com/2/");
+                client.BaseAddress = new Uri("http://api.amp.active.com");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                string url = "https://api.seatgeek.com/2/performers?q=" + model.topic + "&client_id=ODExNjMyNnwxNDk5Nzg0NzQxLjEy";
+                string url = "http://api.amp.active.com/v2/search?query=" + paramsModel.topic + "&category=event&isSearchable=true&country=United%20States&state=" + paramsModel.state + "&api_key=e7d3anxx2a923ryrdm6zcx68";
                 var response = client.GetAsync(url).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var result = response.Content.ReadAsStringAsync();
-                    EventRootObjectModel listEvents = JsonConvert.DeserializeObject<EventRootObjectModel>(result.Result);
-                    foreach (EventModel item in listEvents)
+                    EventModel.RootObject listEvents = JsonConvert.DeserializeObject<EventModel.RootObject>(result.Result);
+                    foreach (EventModel.Result item in listEvents.results)
                     {
-                        EventModel events = new EventModel();
-                        events.topic = item.topic;
-                        events.state = item.state;                     
-                        userInput.Add(item);
+                        EventModel.Result events = new EventModel.Result();
+                        events.assetName = item.assetName;
+                        events.place.stateProvinceCode = item.place.stateProvinceCode;
+                        events.place.addressLine1Txt = item.place.addressLine1Txt;
+                        events.activityStartDate = item.activityStartDate;
+                        events.salesEndDate = item.salesEndDate;
+                        events.registrationUrlAdr = item.registrationUrlAdr;
+                        events.place.latitude = item.place.latitude;
+                        events.place.longitude = item.place.longitude;
 
+                                           
+                        userInput.Add(item);
                     }
                 }
             }
             return View(userInput);
         }
-       
 
-        public ActionResult ViewEvents(EventModel model)
-        {
-            using (var client = new HttpClient())
-            {
-                //client.BaseAddress = new Uri("http://api.amp.active.com");
-                //client.DefaultRequestHeaders.Accept.Clear();
-                //client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                //string url = "http://api.amp.active.com/v2/search?query=" + model.topic +"&category=event&country=United%20States&state=" + model.state + "&api_key=e7d3anxx2a923ryrdm6zcx68";
-                //var response = client.GetAsync(url).Result;
-                //if (response.IsSuccessStatusCode)
-                //{
-                //    var result = response.Content.ReadAsStringAsync();
 
-                //}
-
-            }
-            return View();
-        }
 
     }
 }

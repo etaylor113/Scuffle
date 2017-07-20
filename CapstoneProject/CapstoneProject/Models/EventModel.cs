@@ -7,15 +7,18 @@ namespace CapstoneProject.Models
 {
     public class EventModel
     {
+        
         public class SearchParams
         {
             public string topic { get; set; }
             public string state { get; set; }
-        } 
-
+            public string date { get; set; }
+        }
+           
+       
         public  class EventSearchRootObjectModel
         {
-            public List<SearchParams> searchParams { get; set; }
+            public List<EventModel> searchParams { get; set; }
         }
 
 
@@ -363,6 +366,9 @@ namespace CapstoneProject.Models
         }
 
 
-
+        public class RootObjectModel
+        {
+            public List<RootObject> rootObj { get; set; }
+        }
     }
-}
+}   
