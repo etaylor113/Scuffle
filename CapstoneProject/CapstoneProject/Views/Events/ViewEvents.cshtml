@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<CapstoneProject.Models.EventModel.EventsModel>
+@using Newtonsoft.Json
 @{
     ViewBag.Title = "ViewEvents";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -20,7 +21,7 @@
     <br />
     <p>@Html.ActionLink("Go to Google Calendar", "GoogleAuthenticationView", "Calendar", new { }, new { @class = "Search" })</p>
     <script type="text/javascript">
-        @*var data = @Html.Raw(Json.Encode(Model));*@
+        var data = @Html.Raw(Json.Encode(Model));
         console.log(data);
 
         var dataLength = data.length
@@ -32,16 +33,15 @@
                    '</div>' +
                    '<h1 id="firstHeading" class="firstHeading"></h1>' +
                    '<div id="bodyContent">' +
-                   '<p venueName>Venue Name: ' +  '</p>' +
-                   '<p eventName>Artist Name: ' + '</p>' +
+                   '<p>Venue Name: ' + data[0].assetName + '</p>' +                  
                    '<p>Event Address: ' +  '</p>' +
                    '<p>Event Time: ' +  '</p>' +
                    '<p>Event Name: ' +  '</p>' +
                    '<p>Buy Tickets <a href="' +  '">Here</a></p>' +
                    '</div>' +
                    '</div>';
-            var eventObj = { eventInfo: eventInfo, lat: data[e].venue.location.lat, long: data[e].venue.location.lon}
-            locations.push(eventObj);
+            //var eventObj = { eventInfo: eventInfo, lat: data[e].venue.location.lat, long: data[e].venue.location.lon}
+           //locations.push(eventObj);
         }
 
 
@@ -49,7 +49,7 @@
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 4,
-      center: new google.maps.LatLng(data[0].venue.location.lat, data[0].venue.location.lon),
+      center: new google.maps.LatLng(),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
@@ -60,7 +60,7 @@
     for (i = 0; i < locations.length; i++) {
 
       marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i].lat, locations[i].long),
+        position: new google.maps.LatLng(51.508742,-0.120850),
         map: map
       });
 
