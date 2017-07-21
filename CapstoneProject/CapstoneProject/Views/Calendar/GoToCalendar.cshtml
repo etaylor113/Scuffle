@@ -4,15 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="text-align:center">Google Calendar</h2>
+<h1 style="text-align:center">Google Calendar</h1>
 
 <head>
     <meta charset='utf-8' />
 </head>
 
 <body>
-    <h3 style="text-align:center">--Quickstart--</h3>
-    <h4 style="text-align:center">Sign in to link your Google calendar</h4>
+    <h3 style="text-align:center">Sign in to link your Google calendar</h3>
 
     <button id="authorize-button" style="display: none; ">Authorize</button>
     <button id="signout-button" style="display: none; ">Sign Out</button>
@@ -120,15 +119,15 @@
             var description = document.getElementById("eventDesc").value;
             var location = document.getElementById("eventLocation").value;
             var testEvent = {
-                'summary': 'Google I/O 2015',
-                'location': '800 Howard St., San Francisco, CA 94103',
-                'description': 'A chance to hear more about Google\'s developer products.',
+                'summary': eventTitle,
+                'location': location,
+                'description': description,
                 'start': {
-                    'dateTime': '2017-07-28T09:00:00-07:00',
+                    'dateTime': startDate,
                     'timeZone': 'America/Los_Angeles'
                 },
                 'end': {
-                    'dateTime': '2017-07-28T17:00:00-07:00',
+                    'dateTime': endDate,
                     'timeZone': 'America/Los_Angeles'
                 },
                 'recurrence': [

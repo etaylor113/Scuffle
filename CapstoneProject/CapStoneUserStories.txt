@@ -1,12 +1,14 @@
+Actice Access Activity Search Key: bynuz4eap58pkk38m2vants3
 Active Access Key: e7d3anxx2a923ryrdm6zcx68
 
-Google Sign in Key:
+Google Client Secret: sI2nmtg-d27Sy3VCGobe-aVH
+Google Client ID: 358978147634-vt5o7c3na9s28m3qj3jvfp8a39mp5pdm.apps.googleusercontent.com
 
 Google Map Key: AIzaSyCwr4my9cokU5JiXc41ODW41OOjBpHeMMg
 
 Gmail Key:
 
-
+Eventful Api key: f82xVFHpZXDFfbck
 
 Fitness Challenge Web App
 
