@@ -21,16 +21,19 @@
     <h4>Type into fields below to add an event to your calendar.</h4>
 
     <form type="text" method="post" name="message">
-        Event Title <br/><input type="text" style="width: 300px; height: 25px;" name="eventTitle" required><br />
-        Start Date: YYYY-MM-DDTHH:MM:SS-HH:MM <br /><input type="text" style="width: 300px; height: 25px;" name="startDate" required><br />
-        End Date: YYYY-MM-DDTHH:MM:SS-HH:MM <br /><input type="text" style="width: 300px; height: 25px;" name="endDate" required><br />
-        Event Location <br /><input type="text" style="width: 300px; height: 25px;" name="eventLocation"><br />
-        Event Description <br /><input type="text" style="width: 300px; height: 25px;" name="eventDesc"><br />
-        <input type="submit" value="Submit">
+        Event Title <br/><input type="text" style="width: 300px; height: 25px;" id="eventTitle" required><br />
+        Start Date: YYYY-MM-DDTHH:MM:SS-HH:MM <br /><input type="text" style="width: 300px; height: 25px;" id="startDate" required><br />
+        End Date: YYYY-MM-DDTHH:MM:SS-HH:MM <br /><input type="text" style="width: 300px; height: 25px;" id="endDate" required><br />
+        Event Location <br /><input type="text" style="width: 300px; height: 25px;" id="eventLocation"><br />
+        Event Description <br /><input type="text" style="width: 300px; height: 25px;" id="eventDesc"><br />
+        <input type="button" value="Submit"onclick="addEvent();" >
     </form>
-   
-    <script type="text/javascript">
 
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+    <script type="text/javascript">       
         var CLIENT_ID = '358978147634-vt5o7c3na9s28m3qj3jvfp8a39mp5pdm.apps.googleusercontent.com';
         var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
         var calendarPost = ["https://www.googleapis.com/calendar/v3/calendars/calendarId/events"];
@@ -106,57 +109,52 @@
                 }
             });
         }
+         
+        
+       
 
-        function getEventInfo() {
+        function addEvent() {
             var eventTitle = document.getElementById("eventTitle").value;
             var startDate = document.getElementById("startDate").value;
             var endDate = document.getElementById("endDate").value;
             var description = document.getElementById("eventDesc").value;
-            var location = document.getElementById("eventLocation").value;            
+            var location = document.getElementById("eventLocation").value;
+            var testEvent = {
+                'summary': 'Google I/O 2015',
+                'location': '800 Howard St., San Francisco, CA 94103',
+                'description': 'A chance to hear more about Google\'s developer products.',
+                'start': {
+                    'dateTime': '2017-07-28T09:00:00-07:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'end': {
+                    'dateTime': '2017-07-28T17:00:00-07:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'recurrence': [
+                 
+                ],
+                'attendees': [
+                  
+                ],
+                'reminders': {
+                    'useDefault': false,
+                    'overrides': [
+                      { 'method': 'email', 'minutes': 24 * 60 },
+                      { 'method': 'popup', 'minutes': 10 }
+                    ]
+                }
+            };
+            var request = gapi.client.calendar.events.insert({
+                'calendarId': 'primary',
+                'resource': testEvent
+            });
+
+            request.execute(function (testEvent) {
+                appendPre('Event created: ' + testEvent.htmlLink);
+            });
         }
-
-        var event = {
-            'summary': 'Google I/O 2015',
-            'location': '800 Howard St., San Francisco, CA 94103',
-            'description': 'A chance to hear more about Google\'s developer products.',
-            'start': {
-                'dateTime': '2015-05-28T09:00:00-07:00',
-                'timeZone': 'America/Los_Angeles'
-            },
-            'end': {
-                'dateTime': '2015-05-28T17:00:00-07:00',
-                'timeZone': 'America/Los_Angeles'
-            },
-            'recurrence': [
-              'RRULE:FREQ=DAILY;COUNT=2'
-            ],
-            'attendees': [
-              { 'email': 'lpage@example.com' },
-              { 'email': 'sbrin@example.com' }
-            ],
-            'reminders': {
-                'useDefault': false,
-                'overrides': [
-                  { 'method': 'email', 'minutes': 24 * 60 },
-                  { 'method': 'popup', 'minutes': 10 }
-                ]
-            }
-        };
-
-        var request = gapi.client.calendar.events.insert({
-            'calendarId': 'primary',
-            'resource': event
-        });
-
-        request.execute(function (event) {
-            appendPre('Event created: ' + event.htmlLink);
-        });
-
-        
     </script>
 
-    <script async defer src="https://apis.google.com/js/api.js"
-            onload="this.onload=function(){};handleClientLoad()"
-            onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+    
 </body>
