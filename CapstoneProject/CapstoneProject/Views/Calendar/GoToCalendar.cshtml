@@ -4,85 +4,57 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Calendar</h2>
-
+<h2 style="text-align:center">Google Calendar</h2>
 
 <head>
-    <title>Google Calendar API Quickstart</title>
     <meta charset='utf-8' />
 </head>
+
 <body>
-    <p>Google Calendar API Quickstart</p>
+    <h3 style="text-align:center">--Quickstart--</h3>
+    <h4 style="text-align:center">Sign in to link your Google calendar</h4>
 
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize-button" style="display: none;">Authorize</button>
-    <button id="signout-button" style="display: none;">Sign Out</button>
+    <button id="authorize-button" style="display: none; ">Authorize</button>
+    <button id="signout-button" style="display: none; ">Sign Out</button>
+    <pre id="content" style="width: 500px; height:150px; "></pre>
 
-    <pre id="content"></pre>
-    <input type="text" id="eventTitle" value="Event Title" style="height: 35px; width: 300px; font-size: 20px;"> <br/>
-    <input type="text" id="startDate" value="Start Date" style="height: 35px; width: 300px; font-size: 20px;"><br />
-    <input type="text" id="endDate" value="End Date" style="height: 35px; width: 300px; font-size: 20px;"><br />
-    <input type="text" id="eventLocation" value="Event Location" style="height: 35px; width: 300px; font-size: 20px;"><br />
-    <input type="text" id="eventDesc" value="Event Description" style="height: 35px; width: 300px; font-size: 20px;"><br />
-    
+    <h4>Type into fields below to add an event to your calendar.</h4>
 
-    <form action="~/Views/Calendar/GoToCalendar.cshtml" method="post">
-        <input type="text" name="eventTitle" required>
-        <input type="text" name="startDate" required>
-        <input type="text" name="endDate" required>
-        <input type="text" name="eventLocation">
-        <input type="text" name="eventDesc">
+    <form type="text" method="post" name="message">
+        Event Title <br/><input type="text" style="width: 300px; height: 25px;" name="eventTitle" required><br />
+        Start Date: YYYY-MM-DDTHH:MM:SS-HH:MM <br /><input type="text" style="width: 300px; height: 25px;" name="startDate" required><br />
+        End Date: YYYY-MM-DDTHH:MM:SS-HH:MM <br /><input type="text" style="width: 300px; height: 25px;" name="endDate" required><br />
+        Event Location <br /><input type="text" style="width: 300px; height: 25px;" name="eventLocation"><br />
+        Event Description <br /><input type="text" style="width: 300px; height: 25px;" name="eventDesc"><br />
         <input type="submit" value="Submit">
     </form>
-
-
-
-
+   
     <script type="text/javascript">
-        // Client ID and API key from the Developer Console
+
         var CLIENT_ID = '358978147634-vt5o7c3na9s28m3qj3jvfp8a39mp5pdm.apps.googleusercontent.com';
-
-        // Array of API discovery doc URLs for APIs used by the quickstart
         var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-
-        // Authorization scopes required by the API; multiple scopes can be
-        // included, separated by spaces.
-        var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
-
+        var calendarPost = ["https://www.googleapis.com/calendar/v3/calendars/calendarId/events"];
+        var SCOPES = "https://www.googleapis.com/auth/calendar";
         var authorizeButton = document.getElementById('authorize-button');
-        var signoutButton = document.getElementById('signout-button');
+        var signoutButton = document.getElementById('signout-button');     
 
-        /**
-         *  On load, called to load the auth2 library and API client library.
-         */
         function handleClientLoad() {
             gapi.load('client:auth2', initClient);
         }
-
-        /**
-         *  Initializes the API client library and sets up sign-in state
-         *  listeners.
-         */
+     
         function initClient() {
             gapi.client.init({
                 discoveryDocs: DISCOVERY_DOCS,
                 clientId: CLIENT_ID,
                 scope: SCOPES
             }).then(function () {
-                // Listen for sign-in state changes.
                 gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-                // Handle the initial sign-in state.
                 updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
                 authorizeButton.onclick = handleAuthClick;
                 signoutButton.onclick = handleSignoutClick;
             });
         }
 
-        /**
-         *  Called when the signed in status changes, to update the UI
-         *  appropriately. After a sign-in, the API is called.
-         */
         function updateSigninStatus(isSignedIn) {
             if (isSignedIn) {
                 authorizeButton.style.display = 'none';
@@ -94,37 +66,20 @@
             }
         }
 
-        /**
-         *  Sign in the user upon button click.
-         */
         function handleAuthClick(event) {
             gapi.auth2.getAuthInstance().signIn();
         }
 
-        /**
-         *  Sign out the user upon button click.
-         */
         function handleSignoutClick(event) {
             gapi.auth2.getAuthInstance().signOut();
         }
 
-        /**
-         * Append a pre element to the body containing the given message
-         * as its text node. Used to display the results of the API call.
-         *
-         * param {string} message Text to be placed in pre element.
-         */
         function appendPre(message) {
             var pre = document.getElementById('content');
             var textContent = document.createTextNode(message + '\n');
             pre.appendChild(textContent);
         }
 
-        /**
-         * Print the summary and start datetime/date of the next ten events in
-         * the authorized user's calendar. If no events are found an
-         * appropriate message is printed.
-         */
         function listUpcomingEvents() {
             gapi.client.calendar.events.list({
                 'calendarId': 'primary',
@@ -147,18 +102,25 @@
                         appendPre(event.summary + ' (' + when + ')')
                     }
                 } else {
-                    appendPre('No upcoming events found.');
+                    appendPre('No upcoming events found.');                                     
                 }
             });
         }
 
+        function getEventInfo() {
+            var eventTitle = document.getElementById("eventTitle").value;
+            var startDate = document.getElementById("startDate").value;
+            var endDate = document.getElementById("endDate").value;
+            var description = document.getElementById("eventDesc").value;
+            var location = document.getElementById("eventLocation").value;            
+        }
 
         var event = {
             'summary': 'Google I/O 2015',
             'location': '800 Howard St., San Francisco, CA 94103',
             'description': 'A chance to hear more about Google\'s developer products.',
             'start': {
-                'dateTime': '2017-21-28T09:00:00-07:00',
+                'dateTime': '2015-05-28T09:00:00-07:00',
                 'timeZone': 'America/Los_Angeles'
             },
             'end': {
@@ -190,19 +152,7 @@
             appendPre('Event created: ' + event.htmlLink);
         });
 
-
-        function getEventInfo() {
-            var eventTitle = document.getElementById("eventTitle").value;
-            var startDate = document.getElementById("startDate").value;
-            var endDate = document.getElementById("endDate").value;
-            var description = document.getElementById("eventDesc").value;
-            var location = document.getElementById("eventLocation").value;
-        }
-
-
-
-
-
+        
     </script>
 
     <script async defer src="https://apis.google.com/js/api.js"
