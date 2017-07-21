@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "GoToCalendar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Calendar</h2>
@@ -25,7 +26,18 @@
     <input type="text" id="eventDesc" value="Event Description" style="height: 35px; width: 300px; font-size: 20px;"><br />
     
 
-  
+    <form action="~/Views/Calendar/GoToCalendar.cshtml" method="post">
+        <input type="text" name="eventTitle" required>
+        <input type="text" name="startDate" required>
+        <input type="text" name="endDate" required>
+        <input type="text" name="eventLocation">
+        <input type="text" name="eventDesc">
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+
     <script type="text/javascript">
         // Client ID and API key from the Developer Console
         var CLIENT_ID = '358978147634-vt5o7c3na9s28m3qj3jvfp8a39mp5pdm.apps.googleusercontent.com';
