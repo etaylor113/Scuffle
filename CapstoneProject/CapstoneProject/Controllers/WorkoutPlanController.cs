@@ -64,7 +64,7 @@ namespace CapstoneProject.Controllers
         }
         public ActionResult ViewWorkoutChart()
         {
-            return View();
+            return View(db.Users.ToList());
         }         
     }      
 }
