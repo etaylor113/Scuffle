@@ -151,7 +151,29 @@ namespace CapstoneProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Address1 = model.Address1,
+                    Address2 = model.Address2,                    
+                    State = model.State,
+                    City = model.City,
+                    ContactNumber = model.ContactNumber,
+                    ZipCode = model.ZipCode,
+                    Password = model.Password,
+                    ConfirmPassword = model.ConfirmPassword,
+                    RegistrationStatus = model.RegistrationStatus,
+                    MondayPlan = model.MondayPlan,
+                    TuesdayPlan = model.TuesdayPlan,
+                    WednesdayPlan = model.TuesdayPlan,
+                    ThursdayPlan = model.ThursdayPlan,
+                    FridayPlan = model.FridayPlan,
+                    SaturdayPlan = model.SaturdayPlan,
+                    SundayPlan = model.SundayPlan
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
