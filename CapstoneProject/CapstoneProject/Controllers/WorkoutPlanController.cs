@@ -44,7 +44,7 @@ namespace CapstoneProject.Controllers
         public ActionResult CreateWorkoutChart(RegisterViewModel model)
         {
 
-            var user = db.Users.Where(item => item.UserName == User.Identity.Name).First();                 
+            var user = db.Users.Where(item => item.Id == User.Identity.GetUserId()).First();                 
             user.MondayPlan = model.MondayPlan;
             user.TuesdayPlan = model.TuesdayPlan;
             user.WednesdayPlan = model.WednesdayPlan;

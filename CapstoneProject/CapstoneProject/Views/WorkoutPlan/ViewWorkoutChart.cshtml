@@ -10,24 +10,98 @@
 
 
 <table class="table">
+   
     <tr>
-        <th>
-            First Name
-        </th>   
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().MondayPlan != null)
+            {
+                <h3>Monday:</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().MondayPlan)</h4>
+            }
+            else
+            {
+                <h3>Monday:</h3><h4> Nothing Scheduled for this day.</h4>
+            }
+        </td>
     </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @if (item.MondayPlan != null)
-                {
-                    <h3>Monday: @Html.DisplayFor(modelItem => item.MondayPlan)</h3>
-                }
-                else
-                {
-                    <h3>Monday: Nothing Scheduled for this day.</h3>
-                }              
-            </td>
-        </tr>
-    }
+
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().TuesdayPlan != null)
+            {
+                <h3>Tuesday:</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().TuesdayPlan)</h4>
+            }
+            else
+            {
+                <h3>Tuesday:</h3><h4>Nothing Scheduled for this day.</h4>
+            }
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().WednesdayPlan != null)
+            {
+                <h3>Wednesday:</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().WednesdayPlan)</h4>
+            }
+            else
+            {
+                <h3>Wednesday:</h3><h4>Nothing Scheduled for this day.</h4>
+            }
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().ThursdayPlan != null)
+            {
+                <h3>Thursday:</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().ThursdayPlan)</h4>
+            }
+            else
+            {
+                <h3>Thursday:</h3><h4>Nothing Scheduled for this day.</h4>
+            }
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().FridayPlan != null)
+            {
+                <h3>Friday:</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().FridayPlan)</h4>
+            }
+            else
+            {
+                <h3>Friday:</h3><h4>Nothing Scheduled for this day.</h4>
+            }
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().SaturdayPlan != null)
+            {
+                <h3>Saturday:</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().SaturdayPlan)</h4>
+            }
+            else
+            {
+                <h3>Saturday:</h3><h4>Nothing Scheduled for this day.</h4>
+            }
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().SundayPlan != null)
+            {
+                <h3>Sunday:</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().SundayPlan)</h4>
+            }
+            else
+            {
+                <h3>Sunday:</h3><h4>Nothing Scheduled for this day.</h4>
+            }
+        </td>
+    </tr>
+
 </table>
