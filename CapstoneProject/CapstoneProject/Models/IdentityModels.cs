@@ -20,8 +20,17 @@ namespace CapstoneProject.Models
         public string ZipCode { get; set; }
         public string Password { get; set; }   
         public string ConfirmPassword { get; set; }
-        
-             
+        public bool RegistrationStatus { get; set; }
+        public string MondayPlan { get; set; }
+        public string TuesdayPlan { get; set; }
+        public string WednesdayPlan { get; set; }
+        public string ThursdayPlan { get; set; }
+        public string FridayPlan { get; set; }
+        public string SaturdayPlan { get; set; }
+        public string SundayPlan { get; set; }
+
+
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

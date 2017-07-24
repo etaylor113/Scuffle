@@ -115,26 +115,29 @@ namespace CapstoneProject.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        [Display(Name = "Registration Status")]
+        public bool RegistrationStatus { get; set; }
+
         [Display(Name = "Monday")]
-        public string Monday { get; set; }
+        public string MondayPlan { get; set; }
 
         [Display(Name = "Tuesday")]
-        public string Tuesday { get; set; }
+        public string TuesdayPlan { get; set; }
 
         [Display(Name = "Wednesday")]
-        public string Wednesday { get; set; }
+        public string WednesdayPlan { get; set; }
 
         [Display(Name = "Thursday")]
-        public string Thursday { get; set; }
+        public string ThursdayPlan { get; set; }
 
         [Display(Name = "Friday")]
-        public string Friday { get; set; }
+        public string FridayPlan { get; set; }
 
         [Display(Name = "Saturday")]
-        public string Saturday { get; set; }
+        public string SaturdayPlan { get; set; }
 
         [Display(Name = "Sunday")]
-        public string Sunday { get; set; }
+        public string SundayPlan { get; set; }
     }
 
     public class ResetPasswordViewModel

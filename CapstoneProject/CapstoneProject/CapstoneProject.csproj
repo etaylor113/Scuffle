@@ -231,9 +231,9 @@
     <Compile Include="Migrations\201707231852520_added workout chart.Designer.cs">
       <DependentUpon>201707231852520_added workout chart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707231906063_added days.cs" />
-    <Compile Include="Migrations\201707231906063_added days.Designer.cs">
-      <DependentUpon>201707231906063_added days.cs</DependentUpon>
+    <Compile Include="Migrations\201707241227444_added registration status and day plan.cs" />
+    <Compile Include="Migrations\201707241227444_added registration status and day plan.Designer.cs">
+      <DependentUpon>201707241227444_added registration status and day plan.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -341,8 +341,8 @@
     <EmbeddedResource Include="Migrations\201707231852520_added workout chart.resx">
       <DependentUpon>201707231852520_added workout chart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707231906063_added days.resx">
-      <DependentUpon>201707231906063_added days.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707241227444_added registration status and day plan.resx">
+      <DependentUpon>201707241227444_added registration status and day plan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
