@@ -5,11 +5,9 @@
 
 <h2>Create your personal workout chart!</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("CreateWorkoutChart", "WorkoutPlan", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-
-    @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.MondayPlan, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

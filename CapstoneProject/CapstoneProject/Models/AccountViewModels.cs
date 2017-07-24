@@ -119,6 +119,7 @@ namespace CapstoneProject.Models
         public bool RegistrationStatus { get; set; }
 
         [Display(Name = "Monday")]
+        [DataType(DataType.MultilineText)]
         public string MondayPlan { get; set; }
 
         [Display(Name = "Tuesday")]

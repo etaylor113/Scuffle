@@ -1,7 +1,73 @@
-﻿
+﻿@model IEnumerable<CapstoneProject.Models.ApplicationUser>
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "ViewWorkoutChart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ViewWorkoutChart</h2>
+<h2>My Workout Plan</h2>
+<br /> <br />
 
+
+@if (Model.Where(item => item.UserName == User.Identity.GetUserName()).First().MondayPlan != null)
+{
+    <h3>Monday: @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().MondayPlan</h3>
+}
+else
+{
+    <h3>Monday: Nothing Scheduled for this day.</h3>
+}
+
+@if (Model.Where(item => item.UserName == User.Identity.GetUserName()).First().TuesdayPlan != null)
+{
+   <h3>Tuesday: @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().TuesdayPlan</h3>
+}
+else
+{
+    <h3>Tuesday: Nothing Scheduled for this day.</h3>
+}
+
+@if (Model.Where(item => item.UserName == User.Identity.GetUserName()).First().WednesdayPlan != null)
+{
+    <h3>Wednesday: @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().WednesdayPlan</h3>
+}
+else
+{
+    <h3>Wednesday: Nothing Scheduled for this day.</h3>
+}
+
+@if (Model.Where(item => item.UserName == User.Identity.GetUserName()).First().ThursdayPlan != null)
+{
+    <h3>Thursday: @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().ThursdayPlan</h3>
+}
+else
+{
+    <h3>Thursday: Nothing Scheduled for this day.</h3>
+}
+
+@if (Model.Where(item => item.UserName == User.Identity.GetUserName()).First().FridayPlan != null)
+{
+    <h3>Friday: @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().FridayPlan</h3>
+}
+else
+{
+    <h3>Friday: Nothing Scheduled for this day.</h3>
+}
+
+@if (Model.Where(item => item.UserName == User.Identity.GetUserName()).First().SaturdayPlan != null)
+{
+    <h3>Saturday: @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().SaturdayPlan</h3>
+}
+else
+{
+    <h3>SaNothing Scheduled for this day.</h3>
+}
+
+@if (Model.Where(item => item.UserName == User.Identity.GetUserName()).First().SundayPlan != null)
+{
+    <h3>Sunday: @Model.Where(item => item.UserName == User.Identity.GetUserName()).First().SundayPlan</h3>
+}
+else
+{
+    <h3>Nothing Scheduled for this day.</h3>
+}

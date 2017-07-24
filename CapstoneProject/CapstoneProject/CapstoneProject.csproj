@@ -319,6 +319,7 @@
     <Content Include="Views\ErrorMessages\ErrorOccurred.cshtml" />
     <Content Include="Views\ErrorMessages\RegisterAccessRequired.cshtml" />
     <Content Include="Views\Events\SearchForEvents.cshtml" />
+    <Content Include="Views\WorkoutPlan\ChartCreated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
