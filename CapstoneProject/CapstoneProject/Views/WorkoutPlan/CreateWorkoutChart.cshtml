@@ -3,66 +3,65 @@
     ViewBag.Title = "CreateWorkoutChart";
 }
 
-<h2>Create a Workout Chart</h2>
+<h2>Create your personal workout chart!</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a workout schedule</h4>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(m => m.Monday, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.MondayPlan, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Monday, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.MondayPlan, new { @class = "form-control" })
         </div>
     </div>
     //first name
     <div class="form-group">
-        @Html.LabelFor(m => m.Tuesday, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.TuesdayPlan, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Tuesday, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.TuesdayPlan, new { @class = "form-control" })
         </div>
     </div>
     //last name
     <div class="form-group">
-        @Html.LabelFor(m => m.Wednesday, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.WednesdayPlan, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Wednesday, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.WednesdayPlan, new { @class = "form-control" })
         </div>
     </div>
     //addressLine1
     <div class="form-group">
-        @Html.LabelFor(m => m.Thursday, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.ThursdayPlan, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Thursday, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.ThursdayPlan, new { @class = "form-control" })
         </div>
     </div>
     //addressLine2
     <div class="form-group">
-        @Html.LabelFor(m => m.Friday, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.FridayPlan, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Friday, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.FridayPlan, new { @class = "form-control" })
         </div>
     </div>
     //city
     <div class="form-group">
-        @Html.LabelFor(m => m.Saturday, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.SaturdayPlan, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Saturday, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.SaturdayPlan, new { @class = "form-control" })
         </div>
     </div>
     //state
     <div class="form-group">
-        @Html.LabelFor(m => m.Sunday, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.SundayPlan, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Sunday, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.SundayPlan, new { @class = "form-control" })
         </div>
     
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <input type="submit" class="btn btn-default" value="Create" />
         </div>
     </div>
 }
