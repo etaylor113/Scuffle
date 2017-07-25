@@ -1,7 +1,53 @@
-﻿
+﻿@model IEnumerable<CapstoneProject.Models.ApplicationUser>
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "ViewChallenge";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>My Challenge</h2>
+<br /> <br/>
 
+<table class="table">
+
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().ChallengeName != null)
+            {
+                <h3>Challenge Name:</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().ChallengeName)</h4>
+            }
+            else
+            {
+                <h3>No Challenge Name</h3>
+            }
+        </td>
+    </tr>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+<p><a id="buttonNav" class="btn btn-default" href='@Url.Action("CreateChallenge", "Challenges")'>Edit Challenge &raquo;</a></p>
+
+<style>
+    #buttonNav {
+        background-color: #4717F6;
+        border-color: black;
+        color: #E7DFDD;
+    }
+</style>

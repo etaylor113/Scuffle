@@ -71,7 +71,7 @@ namespace CapstoneProject.Controllers
 
         public ActionResult ViewChallenge()
         {
-            return View();
+            return View(db.Users.ToList());
         }
 
         public ActionResult ChallengeCreated()
