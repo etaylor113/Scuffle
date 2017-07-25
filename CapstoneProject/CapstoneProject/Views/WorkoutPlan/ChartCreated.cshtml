@@ -3,11 +3,38 @@
     ViewBag.Title = "ChartCreated";
 }
 
-<h2 style="text-align:center">Chart Created!</h2>
-<div >
-    <p><a class="btn btn-default" style="background-color: #4717F6; border-color: black; color: #E7DFDD; width:450px; height:50px; display:block; margin-left: auto; margin-right: auto; font-size: 20px;" href='@Url.Action("ViewWorkoutChart", "WorkoutPlan")'>View Workout Plan &raquo;</a></p>
-    <img src="https://images.template.net/wp-content/uploads/2016/12/22055122/Thumbs-up-Emoji.jpg" alt="Thumbs up" style="width:450px;height:400px; display:block; margin-left: auto; margin-right: auto;">
+<h2 class="ChartCreated">Chart Created!</h2>
+<div>
+    <p><a id="button" href='@Url.Action("ViewWorkoutChart", "WorkoutPlan")'>View Workout Plan &raquo;</a></p>
+    <img src="https://images.template.net/wp-content/uploads/2016/12/22055122/Thumbs-up-Emoji.jpg" alt="Thumbs up" id="thumbsUpImage">
 </div>
 
 
+<style>
 
+    .ChartCreated{
+        text-align: center;
+    }
+
+    #button {
+        background-color: #4717F6;
+        border-color: black;
+        color: #E7DFDD;
+        width: 450px;
+        height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+        text-align: center;
+        
+    }
+
+    #thumbsUpImage {
+        width: 450px;
+        height: 400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
