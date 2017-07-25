@@ -8,16 +8,23 @@ namespace CapstoneProject.Controllers
 {
     public class ChallengesController : Controller
     {
-        // GET: Challenges
+  
         public ActionResult ChallengesHome()
         {
             return View();
         }
+
         public ActionResult CreateChallenge()
         {
             return View();
         }
+
         public ActionResult ViewChallange()
+        {
+            return View();
+        }
+
+        public ActionResult ChallengeCrated()
         {
             return View();
         }

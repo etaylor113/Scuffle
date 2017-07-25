@@ -5,6 +5,15 @@
 
 <h2>Workout Plan</h2>
 
-<p><a class="btn btn-default" style="background-color: #4717F6; border-color: black; color: #E7DFDD" href='@Url.Action("CreateWorkoutChart", "WorkoutPlan")'>Create a new plan &raquo;</a></p>
+<p><a  id="buttonNav" class="btn btn-default" href='@Url.Action("CreateWorkoutChart", "WorkoutPlan")'>Create a new plan &raquo;</a></p>
 
-<p><a class="btn btn-default" style="background-color: #4717F6; border-color: black; color: #E7DFDD" href='@Url.Action("ViewWorkoutChart", "WorkoutPlan")'>View my plans &raquo;</a></p>
+<p><a  id="buttonNav" class="btn btn-default" href='@Url.Action("ViewWorkoutChart", "WorkoutPlan")'>View my plans &raquo;</a></p>
+
+
+<style>
+    #buttonNav {
+        background-color: #4717F6;
+        border-color: black;
+        color: #E7DFDD;
+    }
+</style>

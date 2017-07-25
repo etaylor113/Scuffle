@@ -3,5 +3,20 @@
     ViewBag.Title = "ChallengesHome";
 }
 
-<h2>ChallengesHome</h2>
+<h2>Challenges Home</h2>
 
+
+
+<p><a id="buttonNav" class="btn btn-default" href='@Url.Action("CreateChallenge", "Challanges")'>Create a new challenge &raquo;</a></p>
+
+<p><a id="buttonNav" class="btn btn-default" href='@Url.Action("ViewChallenge", "Challenges")'>View my challenge &raquo;</a></p>
+
+
+
+<style>
+    #buttonNav {
+        background-color: #4717F6;
+        border-color: black;
+        color: #E7DFDD;
+    }
+</style>
