@@ -3,14 +3,14 @@
     ViewBag.Title = "ChallengesHome";
 }
 
-<h2>Challenges Home</h2>
+<div id="body">
+    <h2 id="heading">What are Challenges?</h2>
+    <p id="subhead">  Scuffle challenges are a fun way to get motivated be active! Compete with your friends and see who can be the strongest, fastest, or most athletic. With Scuffle challenges, it's all up to you! </p>
 
+    <p><a id="buttonNav" class="btn btn-default" href='@Url.Action("CreateChallenge", "Challenges")'>Create a new challenge &raquo;</a></p>
 
-
-<p><a id="buttonNav" class="btn btn-default" href='@Url.Action("CreateChallenge", "Challenges")'>Create a new challenge &raquo;</a></p>
-
-<p><a id="buttonNav" class="btn btn-default" href='@Url.Action("ViewChallenge", "Challenges")'>View my challenge &raquo;</a></p>
-
+    <p><a id="buttonNav" class="btn btn-default" href='@Url.Action("ViewChallenge", "Challenges")'>View my challenge &raquo;</a></p>
+</div>
 
 
 <style>
@@ -18,5 +18,17 @@
         background-color: #4717F6;
         border-color: black;
         color: #E7DFDD;
+        font-size: 20px;
+    }
+
+    #heading {
+        font-size: 45px;
+    }
+
+    #subhead {
+        font-size: 25px;
+    }
+    #body {
+        text-align:center;       
     }
 </style>

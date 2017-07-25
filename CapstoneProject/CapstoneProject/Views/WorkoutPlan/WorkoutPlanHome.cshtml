@@ -3,17 +3,26 @@
     ViewBag.Title = "WorkoutPlanHome";
 }
 
-<h2>Workout Plan</h2>
+<div id="body">
+    <h2 id="heading">Workout Plan</h2>
+    <br />
+    <p><a id="buttonNav" class="btn btn-default" href='@Url.Action("CreateWorkoutChart", "WorkoutPlan")'>Create a new plan &raquo;</a></p>
 
-<p><a  id="buttonNav" class="btn btn-default" href='@Url.Action("CreateWorkoutChart", "WorkoutPlan")'>Create a new plan &raquo;</a></p>
-
-<p><a  id="buttonNav" class="btn btn-default" href='@Url.Action("ViewWorkoutChart", "WorkoutPlan")'>View my plans &raquo;</a></p>
-
+    <p><a id="buttonNav" class="btn btn-default" href='@Url.Action("ViewWorkoutChart", "WorkoutPlan")'>View my plans &raquo;</a></p>
+</div>
 
 <style>
     #buttonNav {
         background-color: #4717F6;
         border-color: black;
         color: #E7DFDD;
+        font-size: 20px;
+    }
+
+    #heading {
+        font-size: 45px;
+    }
+    #body {
+        text-align:center;       
     }
 </style>

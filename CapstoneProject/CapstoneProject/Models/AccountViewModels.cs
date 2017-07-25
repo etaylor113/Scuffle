@@ -139,6 +139,7 @@ namespace CapstoneProject.Models
 
         [Display(Name = "Sunday")]
         public string SundayPlan { get; set; }
+
         public string ChallengeId { get; set; }      
 
         [Required]
@@ -154,51 +155,51 @@ namespace CapstoneProject.Models
         public string EndDate { get; set; }
 
         [Required]
-        [Display(Name = "Goal One")]
+        [Display(Name = "Goal #1")]
         public string GoalOne { get; set; }
 
-        [Display(Name = "Goal Two")]
+        [Display(Name = "Goal #2")]
         public string GoalTwo { get; set; }
 
-        [Display(Name = "Goal Three")]
+        [Display(Name = "Goal #3")]
         public string GoalThree { get; set; }
 
-        [Display(Name = "Goal Four")]
+        [Display(Name = "Goal #4")]
         public string GoalFour { get; set; }
 
-        [Display(Name = "Goal Five")]
+        [Display(Name = "Goal #5")]
         public string GoalFive { get; set; }
 
         [Required]
-        [Display(Name = "Description One")]
+        [Display(Name = "Description ")]
         public string DescOne { get; set; }
 
-        [Display(Name = "Description Two")]
+        [Display(Name = "Description")]
         public string DescTwo { get; set; }
 
-        [Display(Name = "Description Three")]
+        [Display(Name = "Description")]
         public string DescThree { get; set; }
 
-        [Display(Name = "Description Four")]
+        [Display(Name = "Description")]
         public string DescFour { get; set; }
 
-        [Display(Name = "Description Five")]
+        [Display(Name = "Description")]
         public string DescFive { get; set; }
 
         [Required]
-        [Display(Name = "Difficulty One")]
+        [Display(Name = "Difficulty Level")]
         public string DiffOne { get; set; }
 
-        [Display(Name = "Difficulty Two")]
+        [Display(Name = "Difficulty Level")]
         public string DiffTwo { get; set; }
 
-        [Display(Name = "Difficulty Three")]
+        [Display(Name = "Difficulty Level")]
         public string DiffThree { get; set; }
 
-        [Display(Name = "Difficulty Four")]
+        [Display(Name = "Difficulty Level")]
         public string DiffFour { get; set; }
 
-        [Display(Name = "Difficulty Five")]
+        [Display(Name = "Difficulty Level")]
         public string DiffFive { get; set; }
     }
 

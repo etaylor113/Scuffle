@@ -5,8 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>My Challenge</h2>
-<br /> <br/>
+
 
 <table class="table">
 
@@ -23,26 +22,217 @@
         </td>
     </tr>
 
-   
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().StartDate != null)
+            {
+                <h3>Start Date</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().StartDate)</h4>
+            }
+            else
+            {
+                <h3>No Start Date</h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalOne != null)
+            {
+                <h3>Goal #1</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalOne)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescOne != null)
+            {
+                <h3>Description</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescOne)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffOne != null)
+            {
+                <h3>Difficulty</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffOne)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalTwo != null)
+            {
+                <h3>Goal #2</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalTwo)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescTwo != null)
+            {
+                <h3>Description</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescTwo)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffTwo != null)
+            {
+                <h3>Difficulty</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffTwo)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalThree != null)
+            {
+                <h3>Goal #3</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalThree)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescThree != null)
+            {
+                <h3>Description</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescThree)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffThree != null)
+            {
+                <h3>Difficulty</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffThree)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalFour != null)
+            {
+                <h3>Goal #4</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalFour)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescFour != null)
+            {
+                <h3>Description</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescFour)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffFour != null)
+            {
+                <h3>Difficulty</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffFour)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalFive != null)
+            {
+                <h3>Goal #5</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().GoalFive)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescFive != null)
+            {
+                <h3>Description</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DescFive)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
-
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffFive != null)
+            {
+                <h3>Difficulty</h3><h4>@(Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().DiffFive)</h4>
+            }
+            else
+            {
+                <h3></h3>
+            }
+        </td>
+    </tr>
 
 </table>
-<p><a id="buttonNav" class="btn btn-default" href='@Url.Action("CreateChallenge", "Challenges")'>Edit Challenge &raquo;</a></p>
+
+<p><a id="buttonNav" class="btn btn-default" href='@Url.Action("CreateChallenge", "Challenges")'>New Challenge &raquo;</a></p>
 
 <style>
     #buttonNav {
