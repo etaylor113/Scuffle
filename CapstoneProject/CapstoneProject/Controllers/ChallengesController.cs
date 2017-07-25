@@ -19,7 +19,7 @@ namespace CapstoneProject.Controllers
             return View();
         }
 
-        public ActionResult ViewChallange()
+        public ActionResult ViewChallenge()
         {
             return View();
         }
