@@ -139,10 +139,7 @@ namespace CapstoneProject.Models
 
         [Display(Name = "Sunday")]
         public string SundayPlan { get; set; }
-        public string ChallengeId { get; set; }
-
-        [Display(Name = "Creator Id")]
-        public string CreatorId { get; set; }
+        public string ChallengeId { get; set; }      
 
         [Required]
         [Display(Name = "Challenge Name")]

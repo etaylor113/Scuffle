@@ -235,9 +235,9 @@
     <Compile Include="Migrations\201707241227444_added registration status and day plan.Designer.cs">
       <DependentUpon>201707241227444_added registration status and day plan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707251455536_Added challenges.cs" />
-    <Compile Include="Migrations\201707251455536_Added challenges.Designer.cs">
-      <DependentUpon>201707251455536_Added challenges.cs</DependentUpon>
+    <Compile Include="Migrations\201707251609450_added challenge info.cs" />
+    <Compile Include="Migrations\201707251609450_added challenge info.Designer.cs">
+      <DependentUpon>201707251609450_added challenge info.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -351,8 +351,8 @@
     <EmbeddedResource Include="Migrations\201707241227444_added registration status and day plan.resx">
       <DependentUpon>201707241227444_added registration status and day plan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707251455536_Added challenges.resx">
-      <DependentUpon>201707251455536_Added challenges.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707251609450_added challenge info.resx">
+      <DependentUpon>201707251609450_added challenge info.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

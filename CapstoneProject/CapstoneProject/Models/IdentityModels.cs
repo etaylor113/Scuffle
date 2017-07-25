@@ -8,8 +8,7 @@ namespace CapstoneProject.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
-    {
-    
+    { 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address1 { get; set; }
@@ -28,6 +27,25 @@ namespace CapstoneProject.Models
         public string FridayPlan { get; set; }
         public string SaturdayPlan { get; set; }
         public string SundayPlan { get; set; }
+       public string ChallengeName { get; set; }
+        public string ChallengeId { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
+        public string GoalOne { get; set; }
+        public string GoalTwo { get; set; }
+        public string GoalThree { get; set; }
+        public string GoalFour { get; set; }
+        public string GoalFive { get; set; }
+        public string DescOne { get; set; }
+        public string DescTwo { get; set; }
+        public string DescThree { get; set; }
+        public string DescFour { get; set; }
+        public string DescFive { get; set; }
+        public string DiffOne { get; set; }
+        public string DiffTwo { get; set; }
+        public string DiffThree { get; set; }
+        public string DiffFour { get; set; }
+        public string DiffFive { get; set; }
 
 
 

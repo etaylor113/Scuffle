@@ -157,7 +157,7 @@ namespace CapstoneProject.Controllers
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     Address1 = model.Address1,
-                    Address2 = model.Address2,                    
+                    Address2 = model.Address2,
                     State = model.State,
                     City = model.City,
                     ContactNumber = model.ContactNumber,
@@ -171,7 +171,26 @@ namespace CapstoneProject.Controllers
                     ThursdayPlan = model.ThursdayPlan,
                     FridayPlan = model.FridayPlan,
                     SaturdayPlan = model.SaturdayPlan,
-                    SundayPlan = model.SundayPlan
+                    SundayPlan = model.SundayPlan,
+
+                    ChallengeId = model.ChallengeId,
+                    ChallengeName = model.ChallengeName,
+                    StartDate = model.StartDate,
+                    EndDate = model.EndDate,
+                    GoalOne = model.GoalOne,
+                    GoalTwo = model.GoalTwo,
+                    GoalThree = model.GoalThree,
+                    GoalFour = model.GoalFive,
+                    DescOne = model.DescOne,
+                    DescTwo = model.DescTwo,
+                    DescThree = model.DescThree,
+                    DescFour = model.DescFour,
+                    DescFive = model.DescFive,
+                    DiffOne = model.DiffOne,
+                    DiffTwo = model.DiffTwo,
+                    DiffThree = model.DiffThree,
+                    DiffFour = model.DiffFour,
+                    DiffFive = model.DiffFive
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
