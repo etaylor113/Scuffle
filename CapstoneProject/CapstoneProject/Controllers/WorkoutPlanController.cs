@@ -14,6 +14,7 @@ namespace CapstoneProject.Controllers
     {
 
         ApplicationDbContext db = new ApplicationDbContext();
+
         private ApplicationUserManager userManager;
 
         public ApplicationUserManager UserManager
@@ -43,17 +44,16 @@ namespace CapstoneProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateWorkoutChart(RegisterViewModel model)
         {
-
-            var user = db.Users.Where(item => item.Id == User.Identity.GetUserId()).First();                 
-            user.MondayPlan = model.MondayPlan;
-            user.TuesdayPlan = model.TuesdayPlan;
-            user.WednesdayPlan = model.WednesdayPlan;
-            user.ThursdayPlan = model.ThursdayPlan;
-            user.FridayPlan = model.FridayPlan;
-            user.SaturdayPlan = model.SaturdayPlan;
-            user.SundayPlan = model.SundayPlan;
+            var person = db.Users.Where(item => item.UserName == User.Identity.Name).First();
+            person.MondayPlan = model.MondayPlan;
+            person.TuesdayPlan = model.TuesdayPlan;
+            person.WednesdayPlan = model.WednesdayPlan;
+            person.ThursdayPlan = model.ThursdayPlan;
+            person.FridayPlan = model.FridayPlan;
+            person.SaturdayPlan = model.SaturdayPlan;
+            person.SundayPlan = model.SundayPlan;
      
-            db.Entry(user).State = EntityState.Modified;
+            db.Entry(person).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("ChartCreated", "WorkoutPlan", db.Users.ToList());
         }
