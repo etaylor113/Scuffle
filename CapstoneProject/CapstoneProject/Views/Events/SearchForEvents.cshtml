@@ -5,9 +5,7 @@
 
 <h2>Search For Events</h2>
 <br />
-<p>Below are some available events to search.</p>
-<p>Endurance:  Running, cycling, swimming, triathlons, duathlons, walking, mountain biking</p>
-<p>Fitness:  Aerobics, dance, zumba, yoga, Pilates, ballet</p>
+
 
 @using (Html.BeginForm("ViewEvents", "Events"))
 {
@@ -16,13 +14,6 @@
             <div class="col-md-10">
                 @Html.TextBoxFor(m => m.state, new { @class = "form-control", id = "searchInput" })
                 </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(m => m.topic, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.topic, new { @class = "form-control", id = "searchInput"})
-            </div>
         </div>
 
         <br />

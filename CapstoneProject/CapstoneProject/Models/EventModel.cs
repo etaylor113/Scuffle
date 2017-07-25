@@ -7,372 +7,74 @@ namespace CapstoneProject.Models
 {
     public class EventModel
     {
-        
+
         public class SearchParams
         {
-            public string topic { get; set; }
             public string state { get; set; }
-            //public string date { get; set; }
         }
-           
-       
-        public  class EventSearchRootObjectModel
+
+        public class Event
         {
-            public List<EventModel> searchParams { get; set; }
-        }
-
-
-        public class Topic
-        {
-            public object topicId { get; set; }
-            public string topicName { get; set; }
-            public string topicTaxonomy { get; set; }
-        }
-
-        public class AssetTopic
-        {
-            public object sequence { get; set; }
-            public Topic topic { get; set; }
-        }
-
-        public class Channel
-        {
-            public string channelDsc { get; set; }
-            public string channelName { get; set; }
-            public object channelId { get; set; }
-        }
-
-        public class AssetChannel
-        {
-            public object sequence { get; set; }
-            public Channel channel { get; set; }
-        }
-
-        public class AssetLegacyData
-        {
-            public string maxTeamNb { get; set; }
-            public string assetTypeId { get; set; }
-            public string costAmt { get; set; }
-            public string typeName { get; set; }
-            public string uploadSearchUrlAdr { get; set; }
-            public string avgUserRatingTxt { get; set; }
-            public string trackbackUrl { get; set; }
-            public string seoUrl { get; set; }
-            public string eventCategories { get; set; }
-            public string estParticipantNb { get; set; }
-            public string participationCriteriaTxt { get; set; }
-            public string priceExtensionTxt { get; set; }
-            public object isSearchable { get; set; }
-            public object onlineMembership { get; set; }
-            public string minGuaranteedGameNb { get; set; }
-            public string searchWeight { get; set; }
-            public string userCommentTxt { get; set; }
-            public string substitutionUrl { get; set; }
-            public object onlineDonation { get; set; }
-            public string genderRequirementTxt { get; set; }
-            public string createdDate { get; set; }
-            public string onlineMembershipCostAmt { get; set; }
-            public string authorName { get; set; }
-            public object onlineRegistration { get; set; }
-            public string modifiedDate { get; set; }
-            public string multipleStartDate { get; set; }
-        }
-
-        public class ComponentInUrlAdr
-        {
-        }
-
-        public class ActivenetTopGraphic
-        {
-        }
-
-        public class Market
-        {
-            public string marketName { get; set; }
-            public object marketId { get; set; }
-        }
-
-        public class Attribute
-        {
-            public object tagId { get; set; }
-            public string attributeValue { get; set; }
-            public string attributeType { get; set; }
-        }
-
-        public class AssetAttribute
-        {
-            public Attribute attribute { get; set; }
-        }
-
-        public class MediaType
-        {
-            public string mediaTypeName { get; set; }
-            public string mediaTypeDsc { get; set; }
-            public object mediaTypeId { get; set; }
-        }
-
-        public class AssetMediaType
-        {
-            public object sequence { get; set; }
-            public MediaType mediaType { get; set; }
-        }
-
-        public class AssetParentAsset
-        {
-            public string assetGuid { get; set; }
-        }
-
-        public class AssetStatus
-        {
-            public string assetStatusId { get; set; }
-            public string assetStatusName { get; set; }
-        }
-
-        public class SourceSystem
-        {
-            public string sourceSystemName { get; set; }
-            public string legacyGuid { get; set; }
-            public object affiliate { get; set; }
-        }
-
-        public class EvergreenParentAsset
-        {
-        }
-
-        public class Tag
-        {
-            public object tagId { get; set; }
-            public string tagName { get; set; }
-            public string tagDescription { get; set; }
-        }
-
-        public class AssetTag
-        {
-            public Tag tag { get; set; }
-        }
-
-        public class AssetRootAsset
-        {
-            public string assetGuid { get; set; }
-        }
-
-        public class GeoPoint
-        {
-            public string lon { get; set; }
-            public string lat { get; set; }
-        }
-
-        public class Dma
-        {
-            public object dmaId { get; set; }
-            public string dmaName { get; set; }
-        }
-
-       
-
-        public class Category
-        {
-            public string categoryName { get; set; }
-            public object categoryId { get; set; }
-            public string categoryTaxonomy { get; set; }
-        }
-
-        public class AssetCategory
-        {
-            public object sequence { get; set; }
-            public Category category { get; set; }
-        }
-
-        public class AssetQuantity
-        {
-            public string waitlistCnt { get; set; }
-            public string soldCnt { get; set; }
-            public string createdDate { get; set; }
-            public string availableCnt { get; set; }
-            public string modifiedDate { get; set; }
-            public string capacityNb { get; set; }
-            public string waitlistCapacityNb { get; set; }
-        }
-
-        public class Organization
-        {
-            public string primaryContactName { get; set; }
-            public string organizationName { get; set; }
-            public string addressPostalCd { get; set; }
-            public object sourceSystemId { get; set; }
-            public string imageUrlAdr { get; set; }
-            public string addressCityName { get; set; }
-            public string organizationGuid { get; set; }
-            public string primaryContactPhone { get; set; }
-            public string addressLine2Txt { get; set; }
-            public string shortDsc { get; set; }
-            public string addressLine1Txt { get; set; }
-            public string addressLocalityName { get; set; }
-            public string organizationDsc { get; set; }
-            public string organizationUrlAdr { get; set; }
-            public object hideOrganizationContact { get; set; }
-            public object isDeleted { get; set; }
-            public string addressStateProvinceCode { get; set; }
-            public string sourceSystemGuid { get; set; }
-            public string addressCountryCd { get; set; }
-            public object showOrganizationName { get; set; }
-            public string fax { get; set; }
-        }
-
-        public class ClickTypes
-        {
-            public int otherActive { get; set; }
-            public int registration { get; set; }
-            public int nonActive { get; set; }
-        }
-
-        public class AssetPopularity
-        {
-            public int searches { get; set; }
-            public int createdAt { get; set; }
-            public ClickTypes clickTypes { get; set; }
-            public int clicks { get; set; }
-            public int rank { get; set; }
-            public int results { get; set; }
-            public int views { get; set; }
-            public int A3Rank { get; set; }
-        }
-
-        public class SponsoredContent
-        {
-        }
-
-        public class Place
-        {          
-            public string postalCode { get; set; }
-            public string latitude { get; set; }         
-            public string addressLine2Txt { get; set; }           
-            public string addressLine1Txt { get; set; }
-            public string stateProvinceCode { get; set; }      
-            public string cityName { get; set; }                                      
+            public object watching_count { get; set; }
+            public string olson_path { get; set; }
+            public object calendar_count { get; set; }
+            public object comment_count { get; set; }
+            public string region_abbr { get; set; }
+            public string postal_code { get; set; }
+            public object going_count { get; set; }
+            public string all_day { get; set; }
+            public string latitude { get; set; }
+            public object groups { get; set; }
+            public string url { get; set; }
+            public string id { get; set; }
+            public string privacy { get; set; }
+            public string city_name { get; set; }
+            public object link_count { get; set; }
             public string longitude { get; set; }
+            public string country_name { get; set; }
+            public string country_abbr { get; set; }
+            public string region_name { get; set; }
+            public string start_time { get; set; }
+            public object tz_id { get; set; }
+            public object description { get; set; }
+            public string modified { get; set; }
+            public string venue_display { get; set; }
+            public object tz_country { get; set; }
+            public object performers { get; set; }
+            public string title { get; set; }
+            public string venue_address { get; set; }
+            public string geocode_type { get; set; }
+            public object tz_olson_path { get; set; }
+            public object recur_string { get; set; }
+            public object calendars { get; set; }
+            public string owner { get; set; }
+            public object going { get; set; }
+            public string country_abbr2 { get; set; }
+            public object image { get; set; }
+            public string created { get; set; }
+            public string venue_id { get; set; }
+            public object tz_city { get; set; }
+            public string stop_time { get; set; }
+            public string venue_name { get; set; }
+            public string venue_url { get; set; }
         }
 
-        public class Result
+        public class Events
         {
-            public List<AssetTopic> assetTopics { get; set; }
-            public string salesEndDate { get; set; }
-            public string regReqGenderCd { get; set; }
-            public string registrationUrlAdr { get; set; }
-            public string retryDate { get; set; }
-            public List<object> evergreenAssets { get; set; }
-            public List<object> assetSeoUrls { get; set; }
-            public object publishDate { get; set; }
-            public List<AssetChannel> assetChannels { get; set; }
-            public object sorCreateDtm { get; set; }
-            public object dynamicPriceIncluded { get; set; }
-            public string localeCd { get; set; }
-            public List<object> activityRecurrences { get; set; }
-            public AssetLegacyData assetLegacyData { get; set; }
-            public string activityEndDate { get; set; }
-            public List<object> assetDeals { get; set; }
-            public string assetServiceHostName { get; set; }
-            public object childIndex { get; set; }
-            public List<object> assetDescriptions { get; set; }
-            public ComponentInUrlAdr componentInUrlAdr { get; set; }
-            public string activityStartDate { get; set; }
-            public object volumePriceIncluded { get; set; }
-            public string contactName { get; set; }
-            public string sorCreateUserId { get; set; }
-            public string localTimeZoneId { get; set; }
-            public List<object> socialMedia { get; set; }
-            public string donationUrlAdr { get; set; }
-            public ActivenetTopGraphic activenetTopGraphic { get; set; }
-            public List<object> assetReferences { get; set; }
-            public Market market { get; set; }
-            public List<AssetAttribute> assetAttributes { get; set; }
-            public string timezoneAbb { get; set; }
-            public List<AssetMediaType> assetMediaTypes { get; set; }
-            public string evergreenAssetFlag { get; set; }
-            public string authorName { get; set; }
-            public string registrantSearchUrlAdr { get; set; }
-            public string modifiedDate { get; set; }
-            public string timezoneName { get; set; }
-            public string showContact { get; set; }
-            public AssetParentAsset assetParentAsset { get; set; }
-            public AssetStatus assetStatus { get; set; }
-            public object regReqMaxAge { get; set; }
-            public string currencyCd { get; set; }
-            public string resultsUrlAdr { get; set; }
-            public List<object> assetImages { get; set; }
-            public SourceSystem sourceSystem { get; set; }
-            public string assetGuid { get; set; }
-            public string timezone { get; set; }
-            public EvergreenParentAsset evergreenParentAsset { get; set; }
-            public List<AssetTag> assetTags { get; set; }
-            public AssetRootAsset assetRootAsset { get; set; }
-            public string preferredUrlAdr { get; set; }
-            public string logoUrlAdr { get; set; }
-            public List<object> assetPrices { get; set; }
-            public string detailPageTemplateId { get; set; }
-            public List<object> assetComponents { get; set; }
-            public string teamUrlAdr { get; set; }
-            public string sorId { get; set; }
-            public Place place { get; set; }
-            public object overrideSeourlFlag { get; set; }
-            public List<AssetCategory> assetCategories { get; set; }
-            public string urlAdr { get; set; }
-            public object retryCounter { get; set; }
-            public List<object> assetInterests { get; set; }
-            public string assetDsc { get; set; }
-            public string contactTxt { get; set; }
-            public string alternateName { get; set; }
-            public object regReqMinAge { get; set; }
-            public string createdDate { get; set; }
-            public List<object> assetMetaInterests { get; set; }
-            public string salesStartDate { get; set; }
-            public string homePageUrlAdr { get; set; }
-            public AssetQuantity assetQuantity { get; set; }
-            public Organization organization { get; set; }
-            public string assetName { get; set; }
-            public string contactPhone { get; set; }
-            public double searchScore { get; set; }
-            public int assetVersion { get; set; }
-            public string salesStatus { get; set; }
-            public string assetRegistrableStatus { get; set; }
-            public AssetPopularity assetPopularity { get; set; }
-            public SponsoredContent sponsoredContent { get; set; }
+            public List<Event> @event { get; set; }
         }
-
-
-        public class EventsModel
-        {
-            public string assetName { get; set; }
-            public string addressLine1Txt { get; set; }
-            public string activityStartDate { get; set; }
-            public string registrationUrlAdr { get; set; }
-            public string salesEndDate { get; set; }
-            //public List<Place> place { get; set; }
-           
-        }
-
-        public class EventsRootModel
-        {
-            public List<EventsModel> results { get; set; }
-        }
-     
 
         public class RootObject
         {
-            public int retries { get; set; }
-            public int total_results { get; set; }
-            public int items_per_page { get; set; }
-            public int start_index { get; set; }
-            public List<object> facets { get; set; }
-            public List<object> facet_values { get; set; }
-            public List<object> suggestions { get; set; }
-            public List<Result> results { get; set; }
-            public int radius { get; set; }
-            public string start_date { get; set; }
-            public object sort { get; set; }
+            public object last_item { get; set; }
+            public string total_items { get; set; }
+            public object first_item { get; set; }
+            public string page_number { get; set; }
+            public string page_size { get; set; }
+            public object page_items { get; set; }
+            public string search_time { get; set; }
+            public string page_count { get; set; }
+            public Events events { get; set; }
         }
-
-
-       
     }
 }   

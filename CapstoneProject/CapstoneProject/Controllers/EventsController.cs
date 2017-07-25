@@ -20,29 +20,30 @@ namespace CapstoneProject.Controllers
             return View();
         }
 
-        public ActionResult ViewEvents(EventModel.SearchParams paramsModel)
+        public ActionResult ViewEvents(EventModel.SearchParams searchParams)
         {
-            List<EventModel.EventsModel> allEvents = new List<EventModel.EventsModel>();
+            List<EventModel.Event> allEvents = new List<EventModel.Event>();
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://api.amp.active.com");
+                client.BaseAddress = new Uri("http://api.eventful.com");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                string url = "http://api.amp.active.com/v2/search?query=" + paramsModel.topic + "&category=event&isSearchable=true&country=United%20States&state=" + paramsModel.state + "&api_key=e7d3anxx2a923ryrdm6zcx68";
+                string url = "api.eventful.com/json/events/search?...&keywords=fitness&location=" + searchParams.state + "&app_key=f82xVFHpZXDFfbck";
                 var response = client.GetAsync(url).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var result = response.Content.ReadAsStringAsync();
-                    EventModel.EventsRootModel eventList = JsonConvert.DeserializeObject<EventModel.EventsRootModel>(result.Result);
-                    foreach (EventModel.EventsModel item in eventList.results)
+                    EventModel.Events model = JsonConvert.DeserializeObject<EventModel.Events>(result.Result);
+                    foreach (EventModel.Event item in model.@event)
                     {
-                        EventModel.EventsModel events = new EventModel.EventsModel();
-                        events.assetName = item.assetName;                        
-                        events.activityStartDate = item.activityStartDate;
-                        events.salesEndDate = item.salesEndDate;
-                        events.registrationUrlAdr = item.registrationUrlAdr;
-                        //events.place = item.place;
+                        EventModel.Event events = new EventModel.Event();
+                        events.latitude = item.latitude;
+                        events.longitude = item.longitude;
+                        events.city_name = item.city_name;
+                        events.venue_name = item.venue_name;
+                        events.start_time = item.start_time;
+                        events.stop_time = item.stop_time;
                                                 
                         allEvents.Add(events);
                     }
