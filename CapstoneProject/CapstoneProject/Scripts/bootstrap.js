@@ -1132,7 +1132,9 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   , title: ''
   , delay: 0
   , html: false
-  , container: false
+  , 
+
+: false
   }
 
   Tooltip.prototype.init = function (type, element, options) {
