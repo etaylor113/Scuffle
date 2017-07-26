@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -20,7 +21,7 @@ namespace CapstoneProject.Controllers
             return View();
         }
 
-        public ActionResult ViewEvents(EventModel.SearchParams searchParams)
+        public async Task<ActionResult> ViewEvents(EventModel.SearchParams searchParams)
         {
             List<EventModel.Event> allEvents = new List<EventModel.Event>();
 
@@ -29,22 +30,22 @@ namespace CapstoneProject.Controllers
                 client.BaseAddress = new Uri("http://api.eventful.com");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                string url = "api.eventful.com/json/events/search?...&keywords=fitness&location=" + searchParams.state + "&app_key=f82xVFHpZXDFfbck";
+                string url = "/json/events/search?...&keywords=fitness&location=" + searchParams.state + "&app_key=f82xVFHpZXDFfbck";
                 var response = client.GetAsync(url).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = response.Content.ReadAsStringAsync();
-                    EventModel.Events model = JsonConvert.DeserializeObject<EventModel.Events>(result.Result);
-                    foreach (EventModel.Event item in model.@event)
+                    var result = await response.Content.ReadAsStringAsync();
+                    EventModel.RootObject model = JsonConvert.DeserializeObject<EventModel.RootObject>(result);
+                    foreach (EventModel.Event item in model.events.@event)
                     {
                         EventModel.Event events = new EventModel.Event();
                         events.latitude = item.latitude;
                         events.longitude = item.longitude;
                         events.city_name = item.city_name;
-                        events.venue_name = item.venue_name;
+                        events.title = item.title;
                         events.start_time = item.start_time;
                         events.stop_time = item.stop_time;
-                                                
+                        events.venue_address = item.venue_address;                  
                         allEvents.Add(events);
                     }
                 }

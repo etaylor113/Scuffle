@@ -100,8 +100,8 @@ namespace CapstoneProject.Models
         [Display(Name = "*Zip Code")]
         public string ZipCode { get; set; }
 
-        [Required]
-        [Display(Name = "*User Name")]
+
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
         [Required]
@@ -142,19 +142,15 @@ namespace CapstoneProject.Models
 
         public string ChallengeId { get; set; }      
 
-        [Required]
         [Display(Name = "Challenge Name")]
         public string ChallengeName { get; set; }
 
-        [Required]
         [Display(Name = "Start Date")]
         public string StartDate { get; set; }
 
-        [Required]
         [Display(Name = "End Date")]
         public string EndDate { get; set; }
 
-        [Required]
         [Display(Name = "Goal #1")]
         public string GoalOne { get; set; }
 
@@ -170,7 +166,6 @@ namespace CapstoneProject.Models
         [Display(Name = "Goal #5")]
         public string GoalFive { get; set; }
 
-        [Required]
         [Display(Name = "Description ")]
         public string DescOne { get; set; }
 
@@ -186,7 +181,6 @@ namespace CapstoneProject.Models
         [Display(Name = "Description")]
         public string DescFive { get; set; }
 
-        [Required]
         [Display(Name = "Difficulty Level")]
         public string DiffOne { get; set; }
 

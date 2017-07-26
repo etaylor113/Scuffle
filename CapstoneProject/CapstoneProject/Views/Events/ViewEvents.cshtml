@@ -8,68 +8,69 @@
 <h2>Events map </h2>
 
 <p>Click on pins to learn more about event. </p>
-
+<html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCZwQiJCGkSJzK1K_ZKGIs_e045g3RjELU"
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCwr4my9cokU5JiXc41ODW41OOjBpHeMMg"
             type="text/javascript"></script>
 </head>
 
-    <h2>Google Maps View of Events</h2>
-    <h4>Click points for more infomation</h4>
+<body>
     <div id="map" style="width: 800px; height: 430px; display: block; margin: 0 auto"></div>
     <br />
-    <p>@Html.ActionLink("Go to Google Calendar", "GoogleAuthenticationView", "Calendar", new { }, new { @class = "Search" })</p>
+    <p>@Html.ActionLink("Go to Google Calendar", "GoToCalendar", "Calendar", new { }, new { @class = "Search" })</p>
+
     <script type="text/javascript">
         var data = @Html.Raw(Json.Encode(Model));
-        console.log(data);
 
         var dataLength = data.length
         var locations = [];
         for (var e = 0; e < dataLength; e++)
         {
+            
             var eventInfo = '<div id="content">' +
                    '<div id="siteNotice">' +
                    '</div>' +
                    '<h1 id="firstHeading" class="firstHeading"></h1>' +
                    '<div id="bodyContent">' +
-                   '<p>Venue Name: ' + data[0].assetName + '</p>' +                  
-                   '<p>Event Address: ' +  '</p>' +
-                   '<p>Event Time: ' +  '</p>' +
-                   '<p>Event Name: ' +  '</p>' +
-                   '<p>Buy Tickets <a href="' +  '">Here</a></p>' +
+                   '<h3>' + data[e].title + '</h3>' +
+                   '<p>City: ' +  data[e].city_name + '</p>' +
+                   '<p>Address: ' +  data[e].venue_address + '</p>' +              
+                   '<p>Event Start Time: ' +  data[e].start_time + '</p>' +
+                   '<p>Event End Time: ' +  data[e].stop_time + '</p>' + 
                    '</div>' +
                    '</div>';
-            //var eventObj = { eventInfo: eventInfo, lat: data[e].venue.location.lat, long: data[e].venue.location.lon}
-           //locations.push(eventObj);
+            var eventObj = { eventInfo: eventInfo, lat: data[e].latitude, long: data[e].longitude}
+            locations.push(eventObj);
         }
 
 
         var i = 0;
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: new google.maps.LatLng(),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: new google.maps.LatLng(data[0].latitude, data[0].longitude),
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+        });
 
-    var infowindow = new google.maps.InfoWindow();
+        var infowindow = new google.maps.InfoWindow();
 
-    var marker;
+        var marker;
 
-    for (i = 0; i < locations.length; i++) {
+        for (i = 0; i < locations.length; i++) {
 
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(51.508742,-0.120850),
-        map: map
-      });
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(data[i].latitude, data[i].longitude),
+                map: map
+            });
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i].eventInfo);
-          infowindow.open(map, marker);
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infowindow.setContent(locations[i].eventInfo);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
         }
-      })(marker, i));
-    }
     </script>
-
+</body>
+</html>

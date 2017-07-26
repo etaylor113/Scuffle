@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CapstoneProject.Models;
+using System.Data.Entity;
 
 namespace CapstoneProject.Controllers
 {
@@ -17,7 +18,7 @@ namespace CapstoneProject.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        ApplicationDbContext db = new ApplicationDbContext();
         public AccountController()
         {
         }
@@ -151,8 +152,8 @@ namespace CapstoneProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser {
-                    UserName = model.UserName,
+                var user = new ApplicationUser {                                    
+                    UserName = model.Email,
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
@@ -197,6 +198,8 @@ namespace CapstoneProject.Controllers
                 if (result.Succeeded)
                 {
                     user.RegistrationStatus = true;
+                    db.Entry(user).State = EntityState.Modified;
+                    db.SaveChanges();
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

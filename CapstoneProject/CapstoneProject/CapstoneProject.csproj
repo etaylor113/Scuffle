@@ -239,6 +239,10 @@
     <Compile Include="Migrations\201707251609450_added challenge info.Designer.cs">
       <DependentUpon>201707251609450_added challenge info.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707261458179_changed required inputs.cs" />
+    <Compile Include="Migrations\201707261458179_changed required inputs.Designer.cs">
+      <DependentUpon>201707261458179_changed required inputs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ChallengesModel.cs" />
@@ -353,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707251609450_added challenge info.resx">
       <DependentUpon>201707251609450_added challenge info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707261458179_changed required inputs.resx">
+      <DependentUpon>201707261458179_changed required inputs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

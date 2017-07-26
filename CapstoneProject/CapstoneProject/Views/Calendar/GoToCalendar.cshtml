@@ -13,19 +13,19 @@
 <body>
     <h3 style="text-align:center">Sign in to link your Google calendar</h3>
 
-    <button id="authorize-button" style="display: none; ">Authorize</button>
-    <button id="signout-button" style="display: none; ">Sign Out</button>
+    <button id="authorize-button" class="buttonNav" >Authorize</button>
+    <button id="signout-button" class="buttonNav">Sign Out</button>
     <pre id="content" style="width: 500px; height:150px; "></pre>
 
     <h4>Type into fields below to add an event to your calendar.</h4>
 
     <form type="text" method="post" name="message">
         Event Title <br/><input type="text" style="width: 300px; height: 25px;" id="eventTitle" required><br />
-        Start Date: YYYY-MM-DDTHH:MM:SS-HH:MM <br /><input type="text" style="width: 300px; height: 25px;" id="startDate" required><br />
-        End Date: YYYY-MM-DDTHH:MM:SS-HH:MM <br /><input type="text" style="width: 300px; height: 25px;" id="endDate" required><br />
+        Start Date: YYYY-MM-DDTHH:MM:SS <br /><input type="text" style="width: 300px; height: 25px;" id="startDate" required><br />
+        End Date: YYYY-MM-DDTHH:MM:SS <br /><input type="text" style="width: 300px; height: 25px;" id="endDate" required><br />
         Event Location <br /><input type="text" style="width: 300px; height: 25px;" id="eventLocation"><br />
         Event Description <br /><input type="text" style="width: 300px; height: 25px;" id="eventDesc"><br />
-        <input type="button" value="Submit"onclick="addEvent();" >
+        <input class="submitButton" type="button" value="Submit" onclick="addEvent();">
     </form>
 
     <script async defer src="https://apis.google.com/js/api.js"
@@ -114,8 +114,8 @@
 
         function addEvent() {
             var eventTitle = document.getElementById("eventTitle").value;
-            var startDate = document.getElementById("startDate").value;
-            var endDate = document.getElementById("endDate").value;
+            var startDate = document.getElementById("startDate").value + "-00:00";
+            var endDate = document.getElementById("endDate").value + "-00:00";
             var description = document.getElementById("eventDesc").value;
             var location = document.getElementById("eventLocation").value;
             var testEvent = {
@@ -155,5 +155,24 @@
         }
     </script>
 
-    
+    <style>
+        .buttonNav {
+        background-color: #4717F6;
+        border-color: black;
+        color: #E7DFDD;
+        font-size: 20px;
+        display: none;
+        border-radius: 5px;
+    }
+        .submitButton{
+        background-color: #4717F6;
+        border-color: black;
+        color: #E7DFDD;
+        font-size: 20px;
+        border-radius: 5px;
+        }
+
+    </style>
+
+
 </body>
