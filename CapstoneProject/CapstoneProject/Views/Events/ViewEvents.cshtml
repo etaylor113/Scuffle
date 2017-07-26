@@ -5,9 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Events map </h2>
-
-<p>Click on pins to learn more about event. </p>
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -16,10 +13,14 @@
 </head>
 
 <body>
+
+    <p id="header">Events map </p>
+
+    <p class="body">Click on pins to learn more about event. </p>
+    <p class="body">@Html.ActionLink("Go to Google Calendar", "GoToCalendar", "Calendar", new { }, new { @class = "Search" })</p>
+
     <div id="map" style="width: 800px; height: 430px; display: block; margin: 0 auto"></div>
     <br />
-    <p>@Html.ActionLink("Go to Google Calendar", "GoToCalendar", "Calendar", new { }, new { @class = "Search" })</p>
-
     <script type="text/javascript">
         var data = @Html.Raw(Json.Encode(Model));
 
@@ -72,5 +73,20 @@
             })(marker, i));
         }
     </script>
+
+<style>
+    #header {
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .body {
+        text-align: center;
+        font-size: 30px;
+    }
+
+
+</style>
+
 </body>
 </html>
