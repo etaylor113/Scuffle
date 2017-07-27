@@ -4,6 +4,40 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 style="text-align: center;">You need to create an account with us to access this feature!</h1>
+<div style="text-align: center;">
+    <h2>You need to create an account or log in to access this feature!</h2>
+    <p><a class="button" href='@Url.Action("Register", "Account")'>Create an account &raquo;</a></p>
+    <p><a class="button" href='@Url.Action("Login", "Account")'>Log in &raquo;</a></p>
+    <img id="image" src="https://lh4.ggpht.com/ZWnI6SELndI_wC6H3SvhHCVeJErRvHjAkGwSZ3H9HHNUJ3x3lFfisWJbdUC_drzuYDtJ=w300" alt="Mountain View">
+</div>
 
-<img src="https://lh4.ggpht.com/ZWnI6SELndI_wC6H3SvhHCVeJErRvHjAkGwSZ3H9HHNUJ3x3lFfisWJbdUC_drzuYDtJ=w300" alt="Mountain View" style="width:304px;height:228px; display: block; text-align: center; ">
+<style>
+     #image {
+        width: 350px;
+        height: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-color: black;
+        border: 3px solid #0E0B16;
+        border-radius: 25px;
+    }
+     .button {
+       background-color: #4717F6;
+        border-color: black;
+        border: 2px solid #0E0B16;
+        color: #E7DFDD;
+        width: 350px;
+        height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 30px;
+        text-align: center;
+        border-radius: 5px;
+    }
+     a:hover {
+         color: black;
+     }
+
+</style>
