@@ -6,25 +6,28 @@
 <h2>Friends Home</h2>
 <body>
     <script>
+
+
+
         window.fbAsyncInit = function () {
             FB.init({
                 appId: '331582300627984',
-                cookie: true,
+                autoLogAppEvents: true,
                 xfbml: true,
-                version: 'v2.8'
+                version: 'v2.10'
             });
-        
-        FB.getLoginStatus(function (response) {
-            if (response.status === 'connected') {
-                document.getElementById('status').innerHTML = 'Current Status: Connected to Facebook';
-            } else if (response.status === 'not_authorized') {
-                document.getElementById('status').innerHTML = 'Current Status: Not logged in';
-            }
-            else {
-                document.getElementById('status').innerHTML = 'Current Status: Not logged into Facebook';
-            }
-        });
-     };
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    document.getElementById('demo').innerHTML = 'Status: User Connected.';
+                } else if (response.status === 'not_authorized'){
+                    document.getElementById('demo').innerHTML = 'Status: Not logged in.';
+                } else {
+                    document.getElementById('demo').innerHTML = 'Status: You are not logged into your Facebook account.';
+                }
+            });
+
+            FB.AppEvents.logPageView();
+        };
 
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -35,24 +38,30 @@
         }(document, 'script', 'facebook-jssdk'));
 
         function login() {
-            FB.login(function(response) {
+            FB.login(function (response) {
                 if (response.status === 'connected') {
-                    document.getElementById('status').innerHTML = 'Current Status: Connected to Facebook';
+                    document.getElementById('demo').innerHTML = 'Status: User Connected.';
                 } else if (response.status === 'not_authorized') {
-                    document.getElementById('status').innerHTML = 'Current Status: Not logged in';
-                }
-                else {
-                    document.getElementById('status').innerHTML = 'Current Status: Not logged into Facebook';
+                    document.getElementById('demo').innerHTML = 'Status: Not logged in.';
+                } else {
+                    document.getElementById('demo').innerHTML = 'Status: You are not logged into your Facebook account.';
                 }
             });
         }
 
+        function getInfo() {
+            FB.api('/me', 'GET',{ fields:'first_name,last_name,name,id'}, function(
+                response){
+                document.getElementById('demo').innerHTML = response.id;
+            });
+        }
 
-         
+
+
+
 
     </script>
-
-    <div id="status"></div>
-    <button onclick="login()">Login</button>
-   
+    <div id="demo"></div>
+    <button onclick="login();">Login</button>
+    <button onclick="getInfo();">Get Info</button>
 </body>
