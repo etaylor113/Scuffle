@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace CapstoneProject.Models
 {
@@ -27,7 +28,7 @@ namespace CapstoneProject.Models
         public string FridayPlan { get; set; }
         public string SaturdayPlan { get; set; }
         public string SundayPlan { get; set; }
-       public string ChallengeName { get; set; }
+        public string ChallengeName { get; set; }
         public string ChallengeId { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
@@ -46,6 +47,7 @@ namespace CapstoneProject.Models
         public string DiffThree { get; set; }
         public string DiffFour { get; set; }
         public string DiffFive { get; set; }
+        public virtual ICollection<ApplicationUser> friendsList { get; set; }
 
 
 
@@ -60,6 +62,13 @@ namespace CapstoneProject.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
