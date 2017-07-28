@@ -59,7 +59,8 @@ namespace CapstoneProject.Controllers
             person.FridayPlan = model.FridayPlan;
             person.SaturdayPlan = model.SaturdayPlan;
             person.SundayPlan = model.SundayPlan;
-     
+            person.ChartShared = model.ChartShared;
+
             db.Entry(person).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("ChartCreated", "WorkoutPlan", db.Users.ToList());

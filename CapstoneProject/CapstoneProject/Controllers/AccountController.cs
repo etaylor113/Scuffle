@@ -191,7 +191,8 @@ namespace CapstoneProject.Controllers
                     DiffTwo = model.DiffTwo,
                     DiffThree = model.DiffThree,
                     DiffFour = model.DiffFour,
-                    DiffFive = model.DiffFive
+                    DiffFive = model.DiffFive,
+                    ChartShared = model.ChartShared
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);

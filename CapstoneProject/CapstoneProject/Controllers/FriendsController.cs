@@ -12,7 +12,14 @@ namespace CapstoneProject.Controllers
     {
         public ActionResult FriendsHome()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("RegisterAccessRequired", "ErrorMessages");
+            }
         }
         public ActionResult SearchForFriends()
         {

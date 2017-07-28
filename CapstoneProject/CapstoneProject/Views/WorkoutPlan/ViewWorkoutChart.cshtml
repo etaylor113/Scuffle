@@ -102,4 +102,17 @@
         </td>
     </tr>
 
+    <tr>
+        <td>
+            @if (Model.Where(modelItem => modelItem.UserName == User.Identity.GetUserName()).First().ChartShared == true)
+            {
+                <h3>This chart is shared with your friends.</h3>
+            }
+            else
+            {
+                <h3>Your Friends cannot see your chart.</h3>
+            }
+        </td>
+    </tr>
+
 </table>

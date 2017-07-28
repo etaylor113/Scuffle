@@ -47,7 +47,7 @@ namespace CapstoneProject.Models
         public string DiffThree { get; set; }
         public string DiffFour { get; set; }
         public string DiffFive { get; set; }
-        
+        public bool ChartShared { get; set; }
 
 
 

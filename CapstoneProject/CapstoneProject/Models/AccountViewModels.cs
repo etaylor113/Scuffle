@@ -195,6 +195,9 @@ namespace CapstoneProject.Models
 
         [Display(Name = "Difficulty Level")]
         public string DiffFive { get; set; }
+
+        [Display(Name = "Chart Shared/Private")]
+        public bool ChartShared { get; set; }
     }
 
     public class ResetPasswordViewModel
