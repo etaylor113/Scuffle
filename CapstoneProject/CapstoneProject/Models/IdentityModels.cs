@@ -47,7 +47,7 @@ namespace CapstoneProject.Models
         public string DiffThree { get; set; }
         public string DiffFour { get; set; }
         public string DiffFive { get; set; }
-        public virtual ICollection<ApplicationUser> friendsList { get; set; }
+        
 
 
 
@@ -58,21 +58,24 @@ namespace CapstoneProject.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public virtual ICollection<FriendTable> CustomTable { get; set; }
+    }
+
+    public class FriendTable
+    {
+        public int id { get; set; }
+        public virtual ICollection<ApplicationUser> friendsList { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
+    {    
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public virtual DbSet<FriendTable> FriendTables { get; set; }
 
         public static ApplicationDbContext Create()
         {

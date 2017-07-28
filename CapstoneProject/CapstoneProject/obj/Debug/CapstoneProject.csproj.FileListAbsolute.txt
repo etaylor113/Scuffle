@@ -178,3 +178,4 @@ C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\obj\Debug\Capston
 C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\obj\Debug\CapstoneProject.Migrations.addedchallengeinfo.resources
 C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\obj\Debug\CapstoneProject.Migrations.changedrequiredinputs.resources
 C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\obj\Debug\CapstoneProject.csprojResolveAssemblyReference.cache
+C:\Users\Taylo\Desktop\Scuffle\CapstoneProject\CapstoneProject\obj\Debug\CapstoneProject.Migrations.addedfriendtable.resources

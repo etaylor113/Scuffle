@@ -7,18 +7,31 @@
     <h2 id="heading">What are Challenges?</h2>
     <p id="subhead">  Scuffle challenges are a fun way to get motivated be active! Compete with your friends and see who can be the strongest, fastest, or most athletic. With Scuffle challenges, it's all up to you! </p>
 
-    <p><a id="buttonNav" class="btn btn-default" href='@Url.Action("CreateChallenge", "Challenges")'>Create a new challenge &raquo;</a></p>
+    <p><a class="buttonNav" href='@Url.Action("CreateChallenge", "Challenges")'>Create a new challenge &raquo;</a></p>
 
-    <p><a id="buttonNav" class="btn btn-default" href='@Url.Action("ViewChallenge", "Challenges")'>View my challenge &raquo;</a></p>
+    <p><a class="buttonNav"  href='@Url.Action("ViewChallenge", "Challenges")'>View my challenge &raquo;</a></p>
 </div>
 
 
 <style>
-    #buttonNav {
-        background-color: #4717F6;
+    .buttonNav {
+       background-color: #4717F6;
         border-color: black;
+        border: 2px solid #0E0B16;
         color: #E7DFDD;
-        font-size: 20px;
+        width: 450px;
+        height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 30px;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 30px;
+    }
+
+    a:hover {
+        color: white;
     }
 
     #heading {
