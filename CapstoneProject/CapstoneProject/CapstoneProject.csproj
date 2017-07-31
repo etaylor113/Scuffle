@@ -252,10 +252,23 @@
     <Compile Include="Migrations\201707281412539_added chart sharing.Designer.cs">
       <DependentUpon>201707281412539_added chart sharing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707301957183_deletedTables.cs" />
+    <Compile Include="Migrations\201707301957183_deletedTables.Designer.cs">
+      <DependentUpon>201707301957183_deletedTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707302008367_createdFriendTable.cs" />
+    <Compile Include="Migrations\201707302008367_createdFriendTable.Designer.cs">
+      <DependentUpon>201707302008367_createdFriendTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707310210246_deletedIcollection.cs" />
+    <Compile Include="Migrations\201707310210246_deletedIcollection.Designer.cs">
+      <DependentUpon>201707310210246_deletedIcollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ChallengesModel.cs" />
     <Compile Include="Models\EventModel.cs" />
+    <Compile Include="Models\FriendSearchModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\WorkoutPlanModel.cs" />
@@ -340,9 +353,12 @@
     <Content Include="Views\WorkoutPlan\ChartCreated.cshtml" />
     <Content Include="Views\Challenges\ChallengeCreated.cshtml" />
     <Content Include="Views\Friends\FriendsHome.cshtml" />
+    <Content Include="Views\Friends\ViewAllUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Migrations\201707301946586_AdderId\" />
+    <Folder Include="Migrations\201707301955453_AdderId\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -376,6 +392,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707281412539_added chart sharing.resx">
       <DependentUpon>201707281412539_added chart sharing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707301957183_deletedTables.resx">
+      <DependentUpon>201707301957183_deletedTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707302008367_createdFriendTable.resx">
+      <DependentUpon>201707302008367_createdFriendTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707310210246_deletedIcollection.resx">
+      <DependentUpon>201707310210246_deletedIcollection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

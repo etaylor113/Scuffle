@@ -1,7 +1,53 @@
-﻿
+﻿@model CapstoneProject.Models.FriendSearchModel
 @{
     ViewBag.Title = "SearchForFriends";
 }
 
-<h2>SearchForFriends</h2>
+<h2 id="header">Type your friend's email to add!</h2>
+
+@using (Html.BeginForm("FriendAdded", "Friends"))
+{
+    <fieldset>
+        <div id="form">
+            <div>
+                @Html.TextBoxFor(m => m.addedFriend, new { @class = "form-control", id = "searchInput" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="buttonNav" value="Add Friend" />
+            </div>
+        </div>
+    </fieldset>
+}
+
+
+<style>
+    #header {
+        text-align: center;
+        font-size: 40px;
+        margin-left: -10%;  
+    }
+
+    #form {
+       margin-left: auto;
+        margin-right: auto;
+        margin-left: 32%;
+        width: 400px;
+    }
+
+    .buttonNav {
+        background-color: #4717F6;
+        border-color: black;
+        color: #E7DFDD;
+        font-size: 30px;
+        margin-top: 10px;
+        margin-left: 24%;        
+        border-radius: 5px;
+    }
+   a:hover {
+        color: white;
+    }
+</style>
 

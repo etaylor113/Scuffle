@@ -4,12 +4,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CapstoneProject.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
-    { 
+    {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address1 { get; set; }
@@ -18,7 +19,7 @@ namespace CapstoneProject.Models
         public string City { get; set; }
         public string ContactNumber { get; set; }
         public string ZipCode { get; set; }
-        public string Password { get; set; }   
+        public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public bool RegistrationStatus { get; set; }
         public string MondayPlan { get; set; }
@@ -48,7 +49,7 @@ namespace CapstoneProject.Models
         public string DiffFour { get; set; }
         public string DiffFive { get; set; }
         public bool ChartShared { get; set; }
-
+        public virtual Friends friends { get; set; }
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -58,24 +59,32 @@ namespace CapstoneProject.Models
             // Add custom user claims here
             return userIdentity;
         }
-        public virtual ICollection<FriendTable> CustomTable { get; set; }
+
     }
 
-    public class FriendTable
+    public class Friends
     {
+        [Key]
         public int id { get; set; }
-        public virtual ICollection<ApplicationUser> friendsList { get; set; }
+        public string AdderName { get; set; }
+        public string FriendName { get; set; }
+        
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {    
+    {
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        public virtual DbSet<FriendTable> FriendTables { get; set; }
+        public DbSet<Friends> Friends { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
 
         public static ApplicationDbContext Create()
         {

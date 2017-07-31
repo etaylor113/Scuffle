@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CapstoneProject.Models.ApplicationUser>
+@{
+    ViewBag.Title = "ViewAllUsers";
+}
+
+<h2 id="heading">Here's some possible friends...</h2>
+<br />
+<p id="paragraph">Copy their Email address and click "Add Friends"</p>
+<br />
+@foreach (CapstoneProject.Models.ApplicationUser users in Model)
+{
+    <div class="text_size">
+        <table align="center">
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => users.FirstName) @Html.DisplayFor(modelItem => users.LastName) ---> @Html.DisplayFor(modelItem => users.Email)
+                </th>
+            </tr>
+        </table>
+    </div>
+}
+
+<a id="buttonNav" href='@Url.Action("SearchForFriends", "Friends")'>Add Friends &raquo;</a>
+
+<style>
+    #heading {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #paragraph {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .text_size {
+        font-size: 20px;     
+    }
+
+     #buttonNav {
+      background-color: #4717F6;
+        border-color: black;
+        border: 2px solid #0E0B16;
+        color: #E7DFDD;
+        width: 450px;
+        height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 30px;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 30px;
+    }
+
+</style>
